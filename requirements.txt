@@ -1,0 +1,10 @@
+# Dependencias para script de notificación de contratos indefinidos
+# Generado para cumplimiento del Marco de Gobernanza - Células de Desarrollo
+
+pandas>=2.0.0
+python-dotenv>=1.0.0
+python-dateutil>=2.8.2
+SQLAlchemy>=2.0.0
+pyodbc>=5.0.0
+
+# Nota: smtplib, ssl, email, logging, pathlib son parte de la biblioteca estándar de Python

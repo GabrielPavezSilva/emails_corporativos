@@ -1,0 +1,630 @@
+2025-11-17 10:58:12,256 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-11-17 10:58:12,257 - INFO - No se encontraron empleados para notificar hoy
+2025-11-17 10:58:12,257 - INFO - ============================================================
+2025-11-17 10:58:12,257 - INFO - RESUMEN DE EJECUCIÓN
+2025-11-17 10:58:12,257 - INFO - Total empleados procesados: 0
+2025-11-17 10:58:12,258 - INFO - Emails enviados exitosamente: 0
+2025-11-17 10:58:12,258 - INFO - Emails fallidos: 0
+2025-11-17 10:58:12,258 - INFO - ============================================================
+2025-11-18 10:00:06,345 - INFO - Consulta SQL ejecutada. Registros encontrados: 2
+2025-11-18 10:00:06,355 - INFO - Empleados a notificar:
+0    Felipe Antonio Valenzuela Rucal
+1    Diego Armando Sánchez Fernandez
+2025-11-18 10:00:06,406 - INFO - Imagen embebida: contrato_indefinido.jpg con CID: img_indefinido
+2025-11-18 10:00:10,742 - INFO - Email con imagen embebida enviado a: felipe.rucal@gmail.com
+2025-11-18 10:00:10,751 - INFO - Imagen embebida: contrato_indefinido.jpg con CID: img_indefinido
+2025-11-18 10:00:12,320 - INFO - Email con imagen embebida enviado a: diego-8722@hotmail.com
+2025-11-18 10:00:12,320 - INFO - ============================================================
+2025-11-18 10:00:12,321 - INFO - RESUMEN DE EJECUCIÓN
+2025-11-18 10:00:12,321 - INFO - Total empleados procesados: 2
+2025-11-18 10:00:12,321 - INFO - Emails enviados exitosamente: 2
+2025-11-18 10:00:12,322 - INFO - Emails fallidos: 0
+2025-11-18 10:00:12,322 - INFO - ============================================================
+2025-11-19 10:00:04,172 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-11-19 10:00:04,173 - INFO - No se encontraron empleados para notificar hoy
+2025-11-19 10:00:04,173 - INFO - ============================================================
+2025-11-19 10:00:04,173 - INFO - RESUMEN DE EJECUCIÓN
+2025-11-19 10:00:04,174 - INFO - Total empleados procesados: 0
+2025-11-19 10:00:04,174 - INFO - Emails enviados exitosamente: 0
+2025-11-19 10:00:04,174 - INFO - Emails fallidos: 0
+2025-11-19 10:00:04,174 - INFO - ============================================================
+2025-11-19 16:08:13,804 - INFO - Consulta SQL ejecutada. Registros encontrados: 2
+2025-11-19 16:08:13,809 - INFO - Empleados a notificar:
+0    Felipe Antonio Valenzuela Rucal
+1    Diego Armando Sánchez Fernandez
+2025-11-19 16:08:13,840 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-11-19 16:08:15,651 - INFO - Email con imagen embebida enviado a: gpavez@cramer.cl
+2025-11-19 16:08:15,656 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-11-19 16:08:17,212 - INFO - Email con imagen embebida enviado a: gpavez@cramer.cl
+2025-11-19 16:08:17,213 - INFO - ============================================================
+2025-11-19 16:08:17,214 - INFO - RESUMEN DE EJECUCIÓN
+2025-11-19 16:08:17,214 - INFO - Total empleados procesados: 2
+2025-11-19 16:08:17,215 - INFO - Emails enviados exitosamente: 2
+2025-11-19 16:08:17,215 - INFO - Emails fallidos: 0
+2025-11-19 16:08:17,216 - INFO - ============================================================
+2025-11-19 16:18:15,690 - INFO - Consulta SQL ejecutada. Registros encontrados: 2
+2025-11-19 16:18:15,692 - INFO - Empleados a notificar:
+0    Felipe Antonio Valenzuela Rucal
+1    Diego Armando Sánchez Fernandez
+2025-11-19 16:19:40,121 - INFO - Consulta SQL ejecutada. Registros encontrados: 2
+2025-11-19 16:19:40,124 - INFO - Empleados a notificar:
+0    Felipe Antonio Valenzuela Rucal
+1    Diego Armando Sánchez Fernandez
+2025-11-19 16:19:40,140 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-11-19 16:19:42,309 - INFO - Email con imagen embebida enviado a: gpavez@cramer.cl
+2025-11-19 16:19:42,320 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-11-19 16:19:44,055 - INFO - Email con imagen embebida enviado a: gpavez@cramer.cl
+2025-11-19 16:19:44,056 - INFO - ============================================================
+2025-11-19 16:19:44,057 - INFO - RESUMEN DE EJECUCIÓN
+2025-11-19 16:19:44,058 - INFO - Total empleados procesados: 2
+2025-11-19 16:19:44,058 - INFO - Emails enviados exitosamente: 2
+2025-11-19 16:19:44,059 - INFO - Emails fallidos: 0
+2025-11-19 16:19:44,059 - INFO - ============================================================
+2025-11-19 16:27:48,616 - INFO - Consulta SQL ejecutada. Registros encontrados: 2
+2025-11-19 16:27:48,619 - INFO - Empleados a notificar:
+0    Felipe Antonio Valenzuela Rucal
+1    Diego Armando Sánchez Fernandez
+2025-11-19 16:27:48,633 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-11-19 16:27:50,630 - INFO - Email con imagen embebida enviado a: gpavez@cramer.cl
+2025-11-19 16:27:50,636 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-11-19 16:27:52,341 - INFO - Email con imagen embebida enviado a: gpavez@cramer.cl
+2025-11-19 16:27:52,343 - INFO - ============================================================
+2025-11-19 16:27:52,344 - INFO - RESUMEN DE EJECUCIÓN
+2025-11-19 16:27:52,344 - INFO - Total empleados procesados: 2
+2025-11-19 16:27:52,344 - INFO - Emails enviados exitosamente: 2
+2025-11-19 16:27:52,345 - INFO - Emails fallidos: 0
+2025-11-19 16:27:52,345 - INFO - ============================================================
+2025-11-19 16:30:58,289 - INFO - Consulta SQL ejecutada. Registros encontrados: 2
+2025-11-19 16:30:58,293 - INFO - Empleados a notificar:
+0    Felipe Antonio Valenzuela Rucal
+1    Diego Armando Sánchez Fernandez
+2025-11-19 16:30:58,324 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-11-19 16:31:00,022 - INFO - Email con imagen embebida enviado a: gpavez@cramer.cl
+2025-11-19 16:31:00,029 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-11-19 16:31:01,596 - INFO - Email con imagen embebida enviado a: gpavez@cramer.cl
+2025-11-19 16:31:01,597 - INFO - ============================================================
+2025-11-19 16:31:01,597 - INFO - RESUMEN DE EJECUCIÓN
+2025-11-19 16:31:01,598 - INFO - Total empleados procesados: 2
+2025-11-19 16:31:01,598 - INFO - Emails enviados exitosamente: 2
+2025-11-19 16:31:01,599 - INFO - Emails fallidos: 0
+2025-11-19 16:31:01,599 - INFO - ============================================================
+2025-11-19 16:41:52,364 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-11-19 16:41:52,365 - INFO - No se encontraron empleados para notificar hoy
+2025-11-19 16:41:52,365 - INFO - ============================================================
+2025-11-19 16:41:52,365 - INFO - RESUMEN DE EJECUCIÓN
+2025-11-19 16:41:52,365 - INFO - Total empleados procesados: 0
+2025-11-19 16:41:52,366 - INFO - Emails enviados exitosamente: 0
+2025-11-19 16:41:52,366 - INFO - Emails fallidos: 0
+2025-11-19 16:41:52,366 - INFO - ============================================================
+2025-11-20 10:00:09,544 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-11-20 10:00:09,546 - INFO - No se encontraron empleados para notificar hoy
+2025-11-20 10:00:09,546 - INFO - ============================================================
+2025-11-20 10:00:09,546 - INFO - RESUMEN DE EJECUCIÓN
+2025-11-20 10:00:09,546 - INFO - Total empleados procesados: 0
+2025-11-20 10:00:09,546 - INFO - Emails enviados exitosamente: 0
+2025-11-20 10:00:09,546 - INFO - Emails fallidos: 0
+2025-11-20 10:00:09,546 - INFO - ============================================================
+2025-11-21 10:00:05,942 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-11-21 10:00:05,943 - INFO - No se encontraron empleados para notificar hoy
+2025-11-21 10:00:05,943 - INFO - ============================================================
+2025-11-21 10:00:05,944 - INFO - RESUMEN DE EJECUCIÓN
+2025-11-21 10:00:05,944 - INFO - Total empleados procesados: 0
+2025-11-21 10:00:05,944 - INFO - Emails enviados exitosamente: 0
+2025-11-21 10:00:05,945 - INFO - Emails fallidos: 0
+2025-11-21 10:00:05,945 - INFO - ============================================================
+2025-11-24 08:10:48,756 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-11-24 08:10:48,756 - INFO - No se encontraron empleados para notificar hoy
+2025-11-24 08:10:48,757 - INFO - ============================================================
+2025-11-24 08:10:48,757 - INFO - RESUMEN DE EJECUCIÓN
+2025-11-24 08:10:48,757 - INFO - Total empleados procesados: 0
+2025-11-24 08:10:48,758 - INFO - Emails enviados exitosamente: 0
+2025-11-24 08:10:48,758 - INFO - Emails fallidos: 0
+2025-11-24 08:10:48,758 - INFO - ============================================================
+2025-11-24 10:00:10,301 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-11-24 10:00:10,303 - INFO - No se encontraron empleados para notificar hoy
+2025-11-24 10:00:10,304 - INFO - ============================================================
+2025-11-24 10:00:10,304 - INFO - RESUMEN DE EJECUCIÓN
+2025-11-24 10:00:10,304 - INFO - Total empleados procesados: 0
+2025-11-24 10:00:10,305 - INFO - Emails enviados exitosamente: 0
+2025-11-24 10:00:10,305 - INFO - Emails fallidos: 0
+2025-11-24 10:00:10,305 - INFO - ============================================================
+2025-11-25 08:30:04,292 - INFO - Consulta SQL ejecutada. Registros encontrados: 6
+2025-11-25 08:30:04,299 - INFO - Empleados a notificar:
+0           José Luis Cáceres Sandoval
+1    Marcelo Del Carmen González Baeza
+2      Carolina Alejandra Tapia Burboa
+3      Constanza Francisca Ruiz Bustos
+4           Luis Alfredo Escobar Pérez
+5         Hernán Gabriel Piterá Piterá
+2025-11-25 08:30:04,334 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-11-25 08:30:08,782 - INFO - Email con imagen embebida enviado a: gpavez@cramer.cl
+2025-11-25 08:30:08,790 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-11-25 08:30:10,457 - INFO - Email con imagen embebida enviado a: gpavez@cramer.cl
+2025-11-25 08:30:10,463 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-11-25 08:30:12,175 - INFO - Email con imagen embebida enviado a: gpavez@cramer.cl
+2025-11-25 08:30:12,180 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-11-25 08:30:13,793 - INFO - Email con imagen embebida enviado a: gpavez@cramer.cl
+2025-11-25 08:30:13,799 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-11-25 08:30:15,420 - INFO - Email con imagen embebida enviado a: gpavez@cramer.cl
+2025-11-25 08:30:15,430 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-11-25 08:30:17,139 - INFO - Email con imagen embebida enviado a: gpavez@cramer.cl
+2025-11-25 08:30:17,149 - INFO - ============================================================
+2025-11-25 08:30:17,149 - INFO - RESUMEN DE EJECUCIÓN
+2025-11-25 08:30:17,150 - INFO - Total empleados procesados: 6
+2025-11-25 08:30:17,151 - INFO - Emails enviados exitosamente: 6
+2025-11-25 08:30:17,151 - INFO - Emails fallidos: 0
+2025-11-25 08:30:17,152 - INFO - ============================================================
+2025-11-25 10:00:04,276 - INFO - Consulta SQL ejecutada. Registros encontrados: 6
+2025-11-25 10:00:04,280 - INFO - Empleados a notificar:
+0           José Luis Cáceres Sandoval
+1    Marcelo Del Carmen González Baeza
+2      Carolina Alejandra Tapia Burboa
+3      Constanza Francisca Ruiz Bustos
+4           Luis Alfredo Escobar Pérez
+5         Hernán Gabriel Piterá Piterá
+2025-11-25 10:00:04,307 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-11-25 10:00:06,620 - INFO - Email con imagen embebida enviado a: 1972mefistofeles@gmail.com
+2025-11-25 10:00:06,630 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-11-25 10:00:08,653 - INFO - Email con imagen embebida enviado a: marcelo14051976@gmail.com
+2025-11-25 10:00:08,660 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-11-25 10:00:10,556 - INFO - Email con imagen embebida enviado a: ctapiaburboa@gmail.com
+2025-11-25 10:00:10,566 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-11-25 10:00:13,104 - INFO - Email con imagen embebida enviado a: constanza.fruizbustos@gmail.com
+2025-11-25 10:00:13,114 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-11-25 10:00:14,994 - INFO - Email con imagen embebida enviado a: luis.alfredo.escobar18@gmail.com
+2025-11-25 10:00:15,004 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-11-25 10:00:16,829 - INFO - Email con imagen embebida enviado a: hernangpitera@gmail.com
+2025-11-25 10:00:16,830 - INFO - ============================================================
+2025-11-25 10:00:16,830 - INFO - RESUMEN DE EJECUCIÓN
+2025-11-25 10:00:16,830 - INFO - Total empleados procesados: 6
+2025-11-25 10:00:16,831 - INFO - Emails enviados exitosamente: 6
+2025-11-25 10:00:16,831 - INFO - Emails fallidos: 0
+2025-11-25 10:00:16,832 - INFO - ============================================================
+2025-11-26 10:00:04,319 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-11-26 10:00:04,321 - INFO - No se encontraron empleados para notificar hoy
+2025-11-26 10:00:04,321 - INFO - ============================================================
+2025-11-26 10:00:04,322 - INFO - RESUMEN DE EJECUCIÓN
+2025-11-26 10:00:04,322 - INFO - Total empleados procesados: 0
+2025-11-26 10:00:04,322 - INFO - Emails enviados exitosamente: 0
+2025-11-26 10:00:04,323 - INFO - Emails fallidos: 0
+2025-11-26 10:00:04,323 - INFO - ============================================================
+2025-11-27 10:00:04,142 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-11-27 10:00:04,143 - INFO - No se encontraron empleados para notificar hoy
+2025-11-27 10:00:04,144 - INFO - ============================================================
+2025-11-27 10:00:04,144 - INFO - RESUMEN DE EJECUCIÓN
+2025-11-27 10:00:04,144 - INFO - Total empleados procesados: 0
+2025-11-27 10:00:04,145 - INFO - Emails enviados exitosamente: 0
+2025-11-27 10:00:04,145 - INFO - Emails fallidos: 0
+2025-11-27 10:00:04,145 - INFO - ============================================================
+2025-11-28 10:00:04,235 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-11-28 10:00:04,236 - INFO - No se encontraron empleados para notificar hoy
+2025-11-28 10:00:04,237 - INFO - ============================================================
+2025-11-28 10:00:04,237 - INFO - RESUMEN DE EJECUCIÓN
+2025-11-28 10:00:04,237 - INFO - Total empleados procesados: 0
+2025-11-28 10:00:04,237 - INFO - Emails enviados exitosamente: 0
+2025-11-28 10:00:04,238 - INFO - Emails fallidos: 0
+2025-11-28 10:00:04,238 - INFO - ============================================================
+2025-12-01 08:02:28,781 - INFO - Consulta SQL ejecutada. Registros encontrados: 1
+2025-12-01 08:02:28,785 - INFO - Empleados a notificar:
+0    Fernando Alonso Vera Clavero
+2025-12-01 08:02:28,840 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-12-01 08:02:34,578 - INFO - Email con imagen embebida enviado a: veraclavero32@gmail.com
+2025-12-01 08:02:34,578 - INFO - ============================================================
+2025-12-01 08:02:34,579 - INFO - RESUMEN DE EJECUCIÓN
+2025-12-01 08:02:34,579 - INFO - Total empleados procesados: 1
+2025-12-01 08:02:34,579 - INFO - Emails enviados exitosamente: 1
+2025-12-01 08:02:34,579 - INFO - Emails fallidos: 0
+2025-12-01 08:02:34,579 - INFO - ============================================================
+2025-12-01 10:00:09,145 - INFO - Consulta SQL ejecutada. Registros encontrados: 1
+2025-12-01 10:00:09,153 - INFO - Empleados a notificar:
+0    Fernando Alonso Vera Clavero
+2025-12-01 10:00:09,203 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-12-01 10:00:11,053 - INFO - Email con imagen embebida enviado a: veraclavero32@gmail.com
+2025-12-01 10:00:11,054 - INFO - ============================================================
+2025-12-01 10:00:11,054 - INFO - RESUMEN DE EJECUCIÓN
+2025-12-01 10:00:11,054 - INFO - Total empleados procesados: 1
+2025-12-01 10:00:11,055 - INFO - Emails enviados exitosamente: 1
+2025-12-01 10:00:11,055 - INFO - Emails fallidos: 0
+2025-12-01 10:00:11,055 - INFO - ============================================================
+2025-12-02 10:00:08,659 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-12-02 10:00:08,661 - INFO - No se encontraron empleados para notificar hoy
+2025-12-02 10:00:08,661 - INFO - ============================================================
+2025-12-02 10:00:08,662 - INFO - RESUMEN DE EJECUCIÓN
+2025-12-02 10:00:08,662 - INFO - Total empleados procesados: 0
+2025-12-02 10:00:08,662 - INFO - Emails enviados exitosamente: 0
+2025-12-02 10:00:08,662 - INFO - Emails fallidos: 0
+2025-12-02 10:00:08,663 - INFO - ============================================================
+2025-12-03 10:00:04,092 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-12-03 10:00:04,093 - INFO - No se encontraron empleados para notificar hoy
+2025-12-03 10:00:04,093 - INFO - ============================================================
+2025-12-03 10:00:04,094 - INFO - RESUMEN DE EJECUCIÓN
+2025-12-03 10:00:04,094 - INFO - Total empleados procesados: 0
+2025-12-03 10:00:04,094 - INFO - Emails enviados exitosamente: 0
+2025-12-03 10:00:04,094 - INFO - Emails fallidos: 0
+2025-12-03 10:00:04,095 - INFO - ============================================================
+2025-12-04 10:00:08,248 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-12-04 10:00:08,249 - INFO - No se encontraron empleados para notificar hoy
+2025-12-04 10:00:08,250 - INFO - ============================================================
+2025-12-04 10:00:08,250 - INFO - RESUMEN DE EJECUCIÓN
+2025-12-04 10:00:08,250 - INFO - Total empleados procesados: 0
+2025-12-04 10:00:08,250 - INFO - Emails enviados exitosamente: 0
+2025-12-04 10:00:08,250 - INFO - Emails fallidos: 0
+2025-12-04 10:00:08,250 - INFO - ============================================================
+2025-12-05 10:00:08,496 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-12-05 10:00:08,498 - INFO - No se encontraron empleados para notificar hoy
+2025-12-05 10:00:08,498 - INFO - ============================================================
+2025-12-05 10:00:08,499 - INFO - RESUMEN DE EJECUCIÓN
+2025-12-05 10:00:08,499 - INFO - Total empleados procesados: 0
+2025-12-05 10:00:08,499 - INFO - Emails enviados exitosamente: 0
+2025-12-05 10:00:08,500 - INFO - Emails fallidos: 0
+2025-12-05 10:00:08,500 - INFO - ============================================================
+2025-12-09 08:18:12,888 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-12-09 08:18:12,888 - INFO - No se encontraron empleados para notificar hoy
+2025-12-09 08:18:12,889 - INFO - ============================================================
+2025-12-09 08:18:12,889 - INFO - RESUMEN DE EJECUCIÓN
+2025-12-09 08:18:12,889 - INFO - Total empleados procesados: 0
+2025-12-09 08:18:12,889 - INFO - Emails enviados exitosamente: 0
+2025-12-09 08:18:12,889 - INFO - Emails fallidos: 0
+2025-12-09 08:18:12,889 - INFO - ============================================================
+2025-12-09 10:00:10,943 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-12-09 10:00:10,944 - INFO - No se encontraron empleados para notificar hoy
+2025-12-09 10:00:10,944 - INFO - ============================================================
+2025-12-09 10:00:10,944 - INFO - RESUMEN DE EJECUCIÓN
+2025-12-09 10:00:10,945 - INFO - Total empleados procesados: 0
+2025-12-09 10:00:10,945 - INFO - Emails enviados exitosamente: 0
+2025-12-09 10:00:10,945 - INFO - Emails fallidos: 0
+2025-12-09 10:00:10,946 - INFO - ============================================================
+2025-12-10 10:00:06,096 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-12-10 10:00:06,097 - INFO - No se encontraron empleados para notificar hoy
+2025-12-10 10:00:06,097 - INFO - ============================================================
+2025-12-10 10:00:06,097 - INFO - RESUMEN DE EJECUCIÓN
+2025-12-10 10:00:06,097 - INFO - Total empleados procesados: 0
+2025-12-10 10:00:06,097 - INFO - Emails enviados exitosamente: 0
+2025-12-10 10:00:06,098 - INFO - Emails fallidos: 0
+2025-12-10 10:00:06,098 - INFO - ============================================================
+2025-12-11 10:00:04,102 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-12-11 10:00:04,103 - INFO - No se encontraron empleados para notificar hoy
+2025-12-11 10:00:04,103 - INFO - ============================================================
+2025-12-11 10:00:04,103 - INFO - RESUMEN DE EJECUCIÓN
+2025-12-11 10:00:04,103 - INFO - Total empleados procesados: 0
+2025-12-11 10:00:04,103 - INFO - Emails enviados exitosamente: 0
+2025-12-11 10:00:04,103 - INFO - Emails fallidos: 0
+2025-12-11 10:00:04,103 - INFO - ============================================================
+2025-12-12 10:00:04,737 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-12-12 10:00:04,739 - INFO - No se encontraron empleados para notificar hoy
+2025-12-12 10:00:04,740 - INFO - ============================================================
+2025-12-12 10:00:04,740 - INFO - RESUMEN DE EJECUCIÓN
+2025-12-12 10:00:04,740 - INFO - Total empleados procesados: 0
+2025-12-12 10:00:04,741 - INFO - Emails enviados exitosamente: 0
+2025-12-12 10:00:04,741 - INFO - Emails fallidos: 0
+2025-12-12 10:00:04,741 - INFO - ============================================================
+2025-12-15 08:06:28,276 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-12-15 08:06:28,277 - INFO - No se encontraron empleados para notificar hoy
+2025-12-15 08:06:28,277 - INFO - ============================================================
+2025-12-15 08:06:28,278 - INFO - RESUMEN DE EJECUCIÓN
+2025-12-15 08:06:28,278 - INFO - Total empleados procesados: 0
+2025-12-15 08:06:28,278 - INFO - Emails enviados exitosamente: 0
+2025-12-15 08:06:28,278 - INFO - Emails fallidos: 0
+2025-12-15 08:06:28,278 - INFO - ============================================================
+2025-12-15 10:00:04,015 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-12-15 10:00:04,016 - INFO - No se encontraron empleados para notificar hoy
+2025-12-15 10:00:04,016 - INFO - ============================================================
+2025-12-15 10:00:04,016 - INFO - RESUMEN DE EJECUCIÓN
+2025-12-15 10:00:04,016 - INFO - Total empleados procesados: 0
+2025-12-15 10:00:04,017 - INFO - Emails enviados exitosamente: 0
+2025-12-15 10:00:04,017 - INFO - Emails fallidos: 0
+2025-12-15 10:00:04,017 - INFO - ============================================================
+2025-12-16 10:00:05,540 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-12-16 10:00:05,541 - INFO - No se encontraron empleados para notificar hoy
+2025-12-16 10:00:05,541 - INFO - ============================================================
+2025-12-16 10:00:05,541 - INFO - RESUMEN DE EJECUCIÓN
+2025-12-16 10:00:05,541 - INFO - Total empleados procesados: 0
+2025-12-16 10:00:05,541 - INFO - Emails enviados exitosamente: 0
+2025-12-16 10:00:05,542 - INFO - Emails fallidos: 0
+2025-12-16 10:00:05,542 - INFO - ============================================================
+2025-12-17 10:00:05,715 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-12-17 10:00:05,716 - INFO - No se encontraron empleados para notificar hoy
+2025-12-17 10:00:05,716 - INFO - ============================================================
+2025-12-17 10:00:05,717 - INFO - RESUMEN DE EJECUCIÓN
+2025-12-17 10:00:05,717 - INFO - Total empleados procesados: 0
+2025-12-17 10:00:05,717 - INFO - Emails enviados exitosamente: 0
+2025-12-17 10:00:05,717 - INFO - Emails fallidos: 0
+2025-12-17 10:00:05,717 - INFO - ============================================================
+2025-12-18 10:00:04,150 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-12-18 10:00:04,152 - INFO - No se encontraron empleados para notificar hoy
+2025-12-18 10:00:04,152 - INFO - ============================================================
+2025-12-18 10:00:04,153 - INFO - RESUMEN DE EJECUCIÓN
+2025-12-18 10:00:04,153 - INFO - Total empleados procesados: 0
+2025-12-18 10:00:04,153 - INFO - Emails enviados exitosamente: 0
+2025-12-18 10:00:04,154 - INFO - Emails fallidos: 0
+2025-12-18 10:00:04,154 - INFO - ============================================================
+2025-12-19 10:00:04,278 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-12-19 10:00:04,280 - INFO - No se encontraron empleados para notificar hoy
+2025-12-19 10:00:04,281 - INFO - ============================================================
+2025-12-19 10:00:04,281 - INFO - RESUMEN DE EJECUCIÓN
+2025-12-19 10:00:04,281 - INFO - Total empleados procesados: 0
+2025-12-19 10:00:04,282 - INFO - Emails enviados exitosamente: 0
+2025-12-19 10:00:04,282 - INFO - Emails fallidos: 0
+2025-12-19 10:00:04,283 - INFO - ============================================================
+2025-12-22 08:10:17,782 - INFO - Consulta SQL ejecutada. Registros encontrados: 2
+2025-12-22 08:10:17,811 - INFO - Empleados a notificar:
+0    Aischell Karoline Pichulman Andrade
+1            Pedro Antonio Lira Martínez
+2025-12-22 08:10:17,850 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-12-22 08:10:23,603 - INFO - Email con imagen embebida enviado a: aischellpichulman18@gmail.com
+2025-12-22 08:10:23,610 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-12-22 08:10:25,376 - INFO - Email con imagen embebida enviado a: pedro.lira.mt@gmail.com
+2025-12-22 08:10:25,377 - INFO - ============================================================
+2025-12-22 08:10:25,377 - INFO - RESUMEN DE EJECUCIÓN
+2025-12-22 08:10:25,378 - INFO - Total empleados procesados: 2
+2025-12-22 08:10:25,378 - INFO - Emails enviados exitosamente: 2
+2025-12-22 08:10:25,378 - INFO - Emails fallidos: 0
+2025-12-22 08:10:25,378 - INFO - ============================================================
+2025-12-22 10:00:06,254 - INFO - Consulta SQL ejecutada. Registros encontrados: 2
+2025-12-22 10:00:06,265 - INFO - Empleados a notificar:
+0    Aischell Karoline Pichulman Andrade
+1            Pedro Antonio Lira Martínez
+2025-12-22 10:00:06,334 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-12-22 10:00:08,962 - INFO - Email con imagen embebida enviado a: aischellpichulman18@gmail.com
+2025-12-22 10:00:08,981 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2025-12-22 10:00:11,417 - INFO - Email con imagen embebida enviado a: pedro.lira.mt@gmail.com
+2025-12-22 10:00:11,419 - INFO - ============================================================
+2025-12-22 10:00:11,420 - INFO - RESUMEN DE EJECUCIÓN
+2025-12-22 10:00:11,421 - INFO - Total empleados procesados: 2
+2025-12-22 10:00:11,421 - INFO - Emails enviados exitosamente: 2
+2025-12-22 10:00:11,422 - INFO - Emails fallidos: 0
+2025-12-22 10:00:11,422 - INFO - ============================================================
+2025-12-23 10:00:04,630 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-12-23 10:00:04,631 - INFO - No se encontraron empleados para notificar hoy
+2025-12-23 10:00:04,632 - INFO - ============================================================
+2025-12-23 10:00:04,632 - INFO - RESUMEN DE EJECUCIÓN
+2025-12-23 10:00:04,632 - INFO - Total empleados procesados: 0
+2025-12-23 10:00:04,633 - INFO - Emails enviados exitosamente: 0
+2025-12-23 10:00:04,633 - INFO - Emails fallidos: 0
+2025-12-23 10:00:04,633 - INFO - ============================================================
+2025-12-24 10:00:03,961 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2025-12-24 10:00:03,963 - INFO - No se encontraron empleados para notificar hoy
+2025-12-24 10:00:03,964 - INFO - ============================================================
+2025-12-24 10:00:03,964 - INFO - RESUMEN DE EJECUCIÓN
+2025-12-24 10:00:03,964 - INFO - Total empleados procesados: 0
+2025-12-24 10:00:03,964 - INFO - Emails enviados exitosamente: 0
+2025-12-24 10:00:03,965 - INFO - Emails fallidos: 0
+2025-12-24 10:00:03,965 - INFO - ============================================================
+2026-01-05 10:00:05,640 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-05 10:00:05,641 - INFO - No se encontraron empleados para notificar hoy
+2026-01-05 10:00:05,642 - INFO - ============================================================
+2026-01-05 10:00:05,642 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-05 10:00:05,642 - INFO - Total empleados procesados: 0
+2026-01-05 10:00:05,642 - INFO - Emails enviados exitosamente: 0
+2026-01-05 10:00:05,643 - INFO - Emails fallidos: 0
+2026-01-05 10:00:05,643 - INFO - ============================================================
+2026-01-06 10:00:06,591 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-06 10:00:06,591 - INFO - No se encontraron empleados para notificar hoy
+2026-01-06 10:00:06,592 - INFO - ============================================================
+2026-01-06 10:00:06,592 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-06 10:00:06,592 - INFO - Total empleados procesados: 0
+2026-01-06 10:00:06,592 - INFO - Emails enviados exitosamente: 0
+2026-01-06 10:00:06,592 - INFO - Emails fallidos: 0
+2026-01-06 10:00:06,592 - INFO - ============================================================
+2026-01-07 10:00:08,786 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-07 10:00:08,787 - INFO - No se encontraron empleados para notificar hoy
+2026-01-07 10:00:08,788 - INFO - ============================================================
+2026-01-07 10:00:08,788 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-07 10:00:08,788 - INFO - Total empleados procesados: 0
+2026-01-07 10:00:08,788 - INFO - Emails enviados exitosamente: 0
+2026-01-07 10:00:08,789 - INFO - Emails fallidos: 0
+2026-01-07 10:00:08,789 - INFO - ============================================================
+2026-01-08 10:00:04,392 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-08 10:00:04,393 - INFO - No se encontraron empleados para notificar hoy
+2026-01-08 10:00:04,394 - INFO - ============================================================
+2026-01-08 10:00:04,394 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-08 10:00:04,395 - INFO - Total empleados procesados: 0
+2026-01-08 10:00:04,395 - INFO - Emails enviados exitosamente: 0
+2026-01-08 10:00:04,396 - INFO - Emails fallidos: 0
+2026-01-08 10:00:04,396 - INFO - ============================================================
+2026-01-09 10:00:04,705 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-09 10:00:04,707 - INFO - No se encontraron empleados para notificar hoy
+2026-01-09 10:00:04,708 - INFO - ============================================================
+2026-01-09 10:00:04,708 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-09 10:00:04,708 - INFO - Total empleados procesados: 0
+2026-01-09 10:00:04,709 - INFO - Emails enviados exitosamente: 0
+2026-01-09 10:00:04,709 - INFO - Emails fallidos: 0
+2026-01-09 10:00:04,709 - INFO - ============================================================
+2026-01-12 08:12:41,089 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-12 08:12:41,090 - INFO - No se encontraron empleados para notificar hoy
+2026-01-12 08:12:41,091 - INFO - ============================================================
+2026-01-12 08:12:41,091 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-12 08:12:41,091 - INFO - Total empleados procesados: 0
+2026-01-12 08:12:41,092 - INFO - Emails enviados exitosamente: 0
+2026-01-12 08:12:41,092 - INFO - Emails fallidos: 0
+2026-01-12 08:12:41,093 - INFO - ============================================================
+2026-01-12 10:00:04,751 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-12 10:00:04,752 - INFO - No se encontraron empleados para notificar hoy
+2026-01-12 10:00:04,752 - INFO - ============================================================
+2026-01-12 10:00:04,753 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-12 10:00:04,753 - INFO - Total empleados procesados: 0
+2026-01-12 10:00:04,753 - INFO - Emails enviados exitosamente: 0
+2026-01-12 10:00:04,754 - INFO - Emails fallidos: 0
+2026-01-12 10:00:04,754 - INFO - ============================================================
+2026-01-13 10:00:08,398 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-13 10:00:08,399 - INFO - No se encontraron empleados para notificar hoy
+2026-01-13 10:00:08,400 - INFO - ============================================================
+2026-01-13 10:00:08,400 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-13 10:00:08,400 - INFO - Total empleados procesados: 0
+2026-01-13 10:00:08,400 - INFO - Emails enviados exitosamente: 0
+2026-01-13 10:00:08,401 - INFO - Emails fallidos: 0
+2026-01-13 10:00:08,401 - INFO - ============================================================
+2026-01-14 10:00:11,236 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-14 10:00:11,237 - INFO - No se encontraron empleados para notificar hoy
+2026-01-14 10:00:11,237 - INFO - ============================================================
+2026-01-14 10:00:11,238 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-14 10:00:11,238 - INFO - Total empleados procesados: 0
+2026-01-14 10:00:11,238 - INFO - Emails enviados exitosamente: 0
+2026-01-14 10:00:11,238 - INFO - Emails fallidos: 0
+2026-01-14 10:00:11,239 - INFO - ============================================================
+2026-01-15 10:00:05,737 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-15 10:00:05,739 - INFO - No se encontraron empleados para notificar hoy
+2026-01-15 10:00:05,740 - INFO - ============================================================
+2026-01-15 10:00:05,740 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-15 10:00:05,741 - INFO - Total empleados procesados: 0
+2026-01-15 10:00:05,742 - INFO - Emails enviados exitosamente: 0
+2026-01-15 10:00:05,742 - INFO - Emails fallidos: 0
+2026-01-15 10:00:05,743 - INFO - ============================================================
+2026-01-16 10:00:04,129 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-16 10:00:04,130 - INFO - No se encontraron empleados para notificar hoy
+2026-01-16 10:00:04,130 - INFO - ============================================================
+2026-01-16 10:00:04,130 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-16 10:00:04,130 - INFO - Total empleados procesados: 0
+2026-01-16 10:00:04,130 - INFO - Emails enviados exitosamente: 0
+2026-01-16 10:00:04,131 - INFO - Emails fallidos: 0
+2026-01-16 10:00:04,131 - INFO - ============================================================
+2026-01-19 08:09:42,871 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-19 08:09:42,872 - INFO - No se encontraron empleados para notificar hoy
+2026-01-19 08:09:42,873 - INFO - ============================================================
+2026-01-19 08:09:42,873 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-19 08:09:42,873 - INFO - Total empleados procesados: 0
+2026-01-19 08:09:42,874 - INFO - Emails enviados exitosamente: 0
+2026-01-19 08:09:42,874 - INFO - Emails fallidos: 0
+2026-01-19 08:09:42,874 - INFO - ============================================================
+2026-01-19 10:00:05,480 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-19 10:00:05,480 - INFO - No se encontraron empleados para notificar hoy
+2026-01-19 10:00:05,481 - INFO - ============================================================
+2026-01-19 10:00:05,481 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-19 10:00:05,481 - INFO - Total empleados procesados: 0
+2026-01-19 10:00:05,481 - INFO - Emails enviados exitosamente: 0
+2026-01-19 10:00:05,481 - INFO - Emails fallidos: 0
+2026-01-19 10:00:05,482 - INFO - ============================================================
+2026-01-20 10:00:04,397 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-20 10:00:04,399 - INFO - No se encontraron empleados para notificar hoy
+2026-01-20 10:00:04,399 - INFO - ============================================================
+2026-01-20 10:00:04,400 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-20 10:00:04,401 - INFO - Total empleados procesados: 0
+2026-01-20 10:00:04,402 - INFO - Emails enviados exitosamente: 0
+2026-01-20 10:00:04,402 - INFO - Emails fallidos: 0
+2026-01-20 10:00:04,402 - INFO - ============================================================
+2026-01-21 10:00:08,920 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-21 10:00:08,921 - INFO - No se encontraron empleados para notificar hoy
+2026-01-21 10:00:08,922 - INFO - ============================================================
+2026-01-21 10:00:08,922 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-21 10:00:08,923 - INFO - Total empleados procesados: 0
+2026-01-21 10:00:08,923 - INFO - Emails enviados exitosamente: 0
+2026-01-21 10:00:08,924 - INFO - Emails fallidos: 0
+2026-01-21 10:00:08,924 - INFO - ============================================================
+2026-01-22 10:00:08,737 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-22 10:00:08,738 - INFO - No se encontraron empleados para notificar hoy
+2026-01-22 10:00:08,739 - INFO - ============================================================
+2026-01-22 10:00:08,739 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-22 10:00:08,739 - INFO - Total empleados procesados: 0
+2026-01-22 10:00:08,739 - INFO - Emails enviados exitosamente: 0
+2026-01-22 10:00:08,740 - INFO - Emails fallidos: 0
+2026-01-22 10:00:08,740 - INFO - ============================================================
+2026-01-23 10:00:05,223 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-23 10:00:05,224 - INFO - No se encontraron empleados para notificar hoy
+2026-01-23 10:00:05,224 - INFO - ============================================================
+2026-01-23 10:00:05,224 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-23 10:00:05,224 - INFO - Total empleados procesados: 0
+2026-01-23 10:00:05,224 - INFO - Emails enviados exitosamente: 0
+2026-01-23 10:00:05,225 - INFO - Emails fallidos: 0
+2026-01-23 10:00:05,225 - INFO - ============================================================
+2026-01-26 08:13:37,718 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-26 08:13:37,734 - INFO - No se encontraron empleados para notificar hoy
+2026-01-26 08:13:37,734 - INFO - ============================================================
+2026-01-26 08:13:37,734 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-26 08:13:37,735 - INFO - Total empleados procesados: 0
+2026-01-26 08:13:37,735 - INFO - Emails enviados exitosamente: 0
+2026-01-26 08:13:37,735 - INFO - Emails fallidos: 0
+2026-01-26 08:13:37,735 - INFO - ============================================================
+2026-01-26 10:00:10,191 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-26 10:00:10,192 - INFO - No se encontraron empleados para notificar hoy
+2026-01-26 10:00:10,192 - INFO - ============================================================
+2026-01-26 10:00:10,192 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-26 10:00:10,192 - INFO - Total empleados procesados: 0
+2026-01-26 10:00:10,193 - INFO - Emails enviados exitosamente: 0
+2026-01-26 10:00:10,193 - INFO - Emails fallidos: 0
+2026-01-26 10:00:10,193 - INFO - ============================================================
+2026-01-27 10:00:10,160 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-27 10:00:10,161 - INFO - No se encontraron empleados para notificar hoy
+2026-01-27 10:00:10,161 - INFO - ============================================================
+2026-01-27 10:00:10,161 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-27 10:00:10,162 - INFO - Total empleados procesados: 0
+2026-01-27 10:00:10,162 - INFO - Emails enviados exitosamente: 0
+2026-01-27 10:00:10,162 - INFO - Emails fallidos: 0
+2026-01-27 10:00:10,162 - INFO - ============================================================
+2026-01-28 10:00:04,460 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-28 10:00:04,460 - INFO - No se encontraron empleados para notificar hoy
+2026-01-28 10:00:04,461 - INFO - ============================================================
+2026-01-28 10:00:04,461 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-28 10:00:04,461 - INFO - Total empleados procesados: 0
+2026-01-28 10:00:04,462 - INFO - Emails enviados exitosamente: 0
+2026-01-28 10:00:04,462 - INFO - Emails fallidos: 0
+2026-01-28 10:00:04,462 - INFO - ============================================================
+2026-01-29 10:00:05,608 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-29 10:00:05,609 - INFO - No se encontraron empleados para notificar hoy
+2026-01-29 10:00:05,609 - INFO - ============================================================
+2026-01-29 10:00:05,610 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-29 10:00:05,610 - INFO - Total empleados procesados: 0
+2026-01-29 10:00:05,610 - INFO - Emails enviados exitosamente: 0
+2026-01-29 10:00:05,610 - INFO - Emails fallidos: 0
+2026-01-29 10:00:05,610 - INFO - ============================================================
+2026-01-30 10:00:06,360 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-30 10:00:06,361 - INFO - No se encontraron empleados para notificar hoy
+2026-01-30 10:00:06,361 - INFO - ============================================================
+2026-01-30 10:00:06,361 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-30 10:00:06,361 - INFO - Total empleados procesados: 0
+2026-01-30 10:00:06,362 - INFO - Emails enviados exitosamente: 0
+2026-01-30 10:00:06,362 - INFO - Emails fallidos: 0
+2026-01-30 10:00:06,362 - INFO - ============================================================
+2026-02-02 08:13:00,045 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-02-02 08:13:00,046 - INFO - No se encontraron empleados para notificar hoy
+2026-02-02 08:13:00,046 - INFO - ============================================================
+2026-02-02 08:13:00,046 - INFO - RESUMEN DE EJECUCIÓN
+2026-02-02 08:13:00,047 - INFO - Total empleados procesados: 0
+2026-02-02 08:13:00,047 - INFO - Emails enviados exitosamente: 0
+2026-02-02 08:13:00,047 - INFO - Emails fallidos: 0
+2026-02-02 08:13:00,048 - INFO - ============================================================
+2026-02-02 10:00:08,987 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-02-02 10:00:08,988 - INFO - No se encontraron empleados para notificar hoy
+2026-02-02 10:00:08,988 - INFO - ============================================================
+2026-02-02 10:00:08,989 - INFO - RESUMEN DE EJECUCIÓN
+2026-02-02 10:00:08,989 - INFO - Total empleados procesados: 0
+2026-02-02 10:00:08,989 - INFO - Emails enviados exitosamente: 0
+2026-02-02 10:00:08,989 - INFO - Emails fallidos: 0
+2026-02-02 10:00:08,989 - INFO - ============================================================
+2026-02-03 10:00:10,098 - INFO - Consulta SQL ejecutada. Registros encontrados: 2
+2026-02-03 10:00:10,105 - INFO - Empleados a notificar:
+0    Patricio Augusto Díaz Huerta
+1       Diego Alonso Opazo Iturra
+2026-02-03 10:00:10,145 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2026-02-03 10:00:14,907 - INFO - Email con imagen embebida enviado a: patricio-diaz@outlook.com
+2026-02-03 10:00:14,916 - INFO - Imagen embebida: contrato_ind.png con CID: img_indefinido
+2026-02-03 10:00:16,673 - INFO - Email con imagen embebida enviado a: diegoopazo23@gmail.com
+2026-02-03 10:00:16,674 - INFO - ============================================================
+2026-02-03 10:00:16,675 - INFO - RESUMEN DE EJECUCIÓN
+2026-02-03 10:00:16,675 - INFO - Total empleados procesados: 2
+2026-02-03 10:00:16,675 - INFO - Emails enviados exitosamente: 2
+2026-02-03 10:00:16,675 - INFO - Emails fallidos: 0
+2026-02-03 10:00:16,676 - INFO - ============================================================
+2026-02-04 10:00:04,894 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-02-04 10:00:04,895 - INFO - No se encontraron empleados para notificar hoy
+2026-02-04 10:00:04,895 - INFO - ============================================================
+2026-02-04 10:00:04,895 - INFO - RESUMEN DE EJECUCIÓN
+2026-02-04 10:00:04,896 - INFO - Total empleados procesados: 0
+2026-02-04 10:00:04,896 - INFO - Emails enviados exitosamente: 0
+2026-02-04 10:00:04,896 - INFO - Emails fallidos: 0
+2026-02-04 10:00:04,896 - INFO - ============================================================
+2026-02-04 14:46:56,442 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-02-04 14:46:56,442 - INFO - No se encontraron empleados para notificar hoy
+2026-02-04 14:46:56,443 - INFO - ============================================================
+2026-02-04 14:46:56,443 - INFO - RESUMEN DE EJECUCIÓN
+2026-02-04 14:46:56,443 - INFO - Total empleados procesados: 0
+2026-02-04 14:46:56,443 - INFO - Emails enviados exitosamente: 0
+2026-02-04 14:46:56,444 - INFO - Emails fallidos: 0
+2026-02-04 14:46:56,444 - INFO - ============================================================
+2026-02-04 15:03:15,515 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-02-04 15:03:15,515 - INFO - No se encontraron empleados para notificar hoy
+2026-02-04 15:03:15,516 - INFO - ============================================================
+2026-02-04 15:03:15,516 - INFO - RESUMEN DE EJECUCIÓN
+2026-02-04 15:03:15,517 - INFO - Total empleados procesados: 0
+2026-02-04 15:03:15,517 - INFO - Emails enviados exitosamente: 0
+2026-02-04 15:03:15,518 - INFO - Emails fallidos: 0
+2026-02-04 15:03:15,518 - INFO - ============================================================
