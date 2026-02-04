@@ -1,30 +1,19 @@
 # docker-compose.yml - Script Notificación Contrato Indefinido
-# Marco de Gobernanza - Células de Desarrollo Cramer
-
-version: '3.8'
-
 services:
   notificacion-indefinido:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: notificacion_contrato_indefinido
-    restart: "no"  # Se ejecuta bajo demanda o con cron externo
-    
-    # Variables de entorno desde archivo .env
+    restart: "no"
+    user: "1008:1008"
     env_file:
       - .env
-    
-    # Volúmenes para persistir logs e imágenes
     volumes:
       - ./logs:/app/logs
-      - ./img:/app/img:ro  # Solo lectura para imágenes
-    
-    # Red interna para acceso a SQL Server
+      - ./img:/app/img:ro
     networks:
-      - cramer_internal
-    
-    # Configuración de logging
+      - desarrollo
     logging:
       driver: "json-file"
       options:
@@ -32,8 +21,5 @@ services:
         max-file: "3"
 
 networks:
-  cramer_internal:
-    driver: bridge
-    # Si necesitas conectar a la red corporativa, descomentar:
-    # external: true
-    # name: red_corporativa
+  desarrollo:
+    external: true

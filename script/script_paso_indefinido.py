@@ -39,13 +39,13 @@ SMTP_PORT = os.getenv("SMTP_PORT")
 SMTP_USER = os.getenv("SMTP_EMAIL")
 SMTP_PASS = os.getenv("SMTP_PASSWORD")
 
-hoy = date.today()
-#hoy = datetime.strptime('2025-11-18', '%Y-%m-%d').date()
+#hoy = date.today()
+hoy = datetime.strptime('2026-02-03', '%Y-%m-%d').date()
 ingreso = hoy - relativedelta(months=3)
 
 try:
     engine = create_engine(
-        f"mssql+pyodbc://{os.getenv('SQL_SERVER')}/{os.getenv('SQL_DATABASE')}?trusted_connection=yes&driver=ODBC+Driver+18+for+SQL+Server&TrustServerCertificate=yes"
+    f"mssql+pyodbc://{os.getenv('SQL_USER')}:{os.getenv('SQL_PASSWORD')}@{os.getenv('SQL_SERVER')}/{os.getenv('SQL_DATABASE')}?driver=ODBC+Driver+18+for+SQL+Server&TrustServerCertificate=yes"
     )
 
     query_sql = f"""
@@ -68,7 +68,8 @@ try:
 
     df_alertas = pd.read_sql_query(query_sql, engine)
     logger.info(f"Consulta SQL ejecutada. Registros encontrados: {len(df_alertas)}")
-    
+    logger.info(f"Datos:\n{df_alertas.to_string()}") 
+
     if len(df_alertas) > 0:
         logger.info(f"Empleados a notificar:\n{df_alertas['full_name'].to_string()}")
     else:
@@ -149,8 +150,8 @@ emails_enviados = 0
 emails_fallidos = 0
 for _, fila in df_alertas.iterrows():
     nombre = fila["first_name"]
-    correo = fila["personal_email"]
-    #correo = "gpavez@cramer.cl" #pruebas
+    #correo = fila["personal_email"]
+    correo = "gpavez@cramer.cl" #pruebas
     asunto = f"¡Felicitaciones por tu contrato indefinido, {nombre}!"
     
     cuerpo_html = f"""
