@@ -1,0 +1,414 @@
+ SELECT 
+        a.first_level_name,
+        a.name,
+        e.cost_center,
+        ranked.person_rut,
+        e.full_name,
+        e.active_since,
+        e.name_role,
+        boss.full_name,
+        ranked.start_date,
+        ranked.end_date,
+        ranked.base_wage
+        
+    FROM (
+        SELECT jh.person_rut,
+            jh.start_date,
+            jh.end_date,
+            jh.base_wage,
+            ROW_NUMBER() OVER (PARTITION BY jh.person_rut ORDER BY jh.end_date DESC) AS rn
+        FROM [IARRHH].[dbo].[job_history] AS jh
+        INNER JOIN employees AS e ON e.rut = jh.person_rut
+        WHERE e.status = 'activo'
+    ) AS ranked
+    INNER JOIN employees AS e 
+    ON e.rut = ranked.person_rut
+    join areas AS a
+        on e.area_id = a.id and e.cost_center = a.cost_center
+    left join employees AS boss
+        on e.rut_boss = boss.rut
+    WHERE ranked.rn <= 10
+    ORDER BY ranked.person_rut, ranked.end_date DESC
+
+
+
+WITH jerarquia_gerente AS (
+    SELECT
+        rut AS gerente_rut,
+        full_name AS gerente_nombre,
+        rut AS empleado_rut,
+        0 AS nivel 
+    FROM dbo.employees
+    WHERE rut IN (
+        '11.834.812-5'
+    )
+    
+    UNION ALL
+
+    SELECT
+        jg.gerente_rut,
+        jg.gerente_nombre,
+        e.rut AS empleado_rut,
+        jg.nivel + 1
+    FROM jerarquia_gerente jg
+    INNER JOIN dbo.employees e ON e.rut_boss = jg.empleado_rut
+    WHERE e.status = 'activo' AND e.payment_method = 'Transferencia Bancaria'
+)
+SELECT DISTINCT
+    jg.gerente_nombre AS gerente,
+    jg.gerente_rut,
+    e.cost_center AS centro_costo,
+    a.name AS area
+FROM jerarquia_gerente jg
+INNER JOIN dbo.employees e ON jg.empleado_rut = e.rut
+LEFT JOIN dbo.areas a ON e.cost_center = a.cost_center AND a.id = e.area_id
+WHERE e.status = 'activo'
+ORDER BY jg.gerente_nombre, e.cost_center
+OPTION (MAXRECURSION 100);  -- Ajusta si hay más niveles jerárquicos
+
+
+SELECT rut, full_name, status, payment_method, rut_boss
+FROM dbo.employees
+WHERE rut_boss = '11.834.812-5';
+2026-01-06 08:30:09,460 - INFO - Iniciando proceso. Fecha: 2026-01-06
+2026-01-06 08:30:10,166 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-06 08:30:10,167 - INFO - No se encontraron empleados nuevos para hoy
+2026-01-06 08:30:10,167 - INFO - ============================================================
+2026-01-06 08:30:10,167 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-06 08:30:10,167 - INFO - Total empleados procesados: 0
+2026-01-06 08:30:10,167 - INFO - Emails enviados exitosamente: 0
+2026-01-06 08:30:10,168 - INFO - Emails fallidos: 0
+2026-01-06 08:30:10,168 - INFO - ============================================================
+2026-01-07 08:30:09,004 - INFO - Iniciando proceso. Fecha: 2026-01-07
+2026-01-07 08:30:10,393 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-07 08:30:10,394 - INFO - No se encontraron empleados nuevos para hoy
+2026-01-07 08:30:10,394 - INFO - ============================================================
+2026-01-07 08:30:10,394 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-07 08:30:10,394 - INFO - Total empleados procesados: 0
+2026-01-07 08:30:10,394 - INFO - Emails enviados exitosamente: 0
+2026-01-07 08:30:10,395 - INFO - Emails fallidos: 0
+2026-01-07 08:30:10,395 - INFO - ============================================================
+2026-01-08 08:30:08,740 - INFO - Iniciando proceso. Fecha: 2026-01-08
+2026-01-08 08:30:09,019 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-08 08:30:09,019 - INFO - No se encontraron empleados nuevos para hoy
+2026-01-08 08:30:09,020 - INFO - ============================================================
+2026-01-08 08:30:09,020 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-08 08:30:09,021 - INFO - Total empleados procesados: 0
+2026-01-08 08:30:09,021 - INFO - Emails enviados exitosamente: 0
+2026-01-08 08:30:09,022 - INFO - Emails fallidos: 0
+2026-01-08 08:30:09,022 - INFO - ============================================================
+2026-01-09 08:30:10,194 - INFO - Iniciando proceso. Fecha: 2026-01-09
+2026-01-09 08:30:11,173 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-09 08:30:11,174 - INFO - No se encontraron empleados nuevos para hoy
+2026-01-09 08:30:11,175 - INFO - ============================================================
+2026-01-09 08:30:11,175 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-09 08:30:11,176 - INFO - Total empleados procesados: 0
+2026-01-09 08:30:11,176 - INFO - Emails enviados exitosamente: 0
+2026-01-09 08:30:11,176 - INFO - Emails fallidos: 0
+2026-01-09 08:30:11,176 - INFO - ============================================================
+2026-01-12 08:12:40,054 - INFO - Iniciando proceso. Fecha: 2026-01-12
+2026-01-12 08:12:41,081 - INFO - Consulta SQL ejecutada. Registros encontrados: 1
+2026-01-12 08:12:41,095 - INFO - Empleados nuevos:
+                   full_name                                       empresa
+0  Kevin Alexis Toledo Núñez  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2026-01-12 08:12:41,096 - INFO - Procesando empleado 1/1: Kevin Alexis Toledo Núñez - CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2026-01-12 08:12:41,252 - INFO - Archivo adjuntado: Reglamento_Interno_Cramer_2024.pdf
+2026-01-12 08:12:46,849 - INFO - Email enviado exitosamente a kevintoledo.n2@gmail.com
+2026-01-12 08:12:46,850 - INFO - ============================================================
+2026-01-12 08:12:46,850 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-12 08:12:46,851 - INFO - Total empleados procesados: 1
+2026-01-12 08:12:46,851 - INFO - Emails enviados exitosamente: 1
+2026-01-12 08:12:46,851 - INFO - Emails fallidos: 0
+2026-01-12 08:12:46,851 - INFO - ============================================================
+2026-01-12 08:30:03,888 - INFO - Iniciando proceso. Fecha: 2026-01-12
+2026-01-12 08:30:04,174 - INFO - Consulta SQL ejecutada. Registros encontrados: 1
+2026-01-12 08:30:04,181 - INFO - Empleados nuevos:
+                   full_name                                       empresa
+0  Kevin Alexis Toledo Núñez  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2026-01-12 08:30:04,182 - INFO - Procesando empleado 1/1: Kevin Alexis Toledo Núñez - CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2026-01-12 08:30:04,209 - INFO - Archivo adjuntado: Reglamento_Interno_Cramer_2024.pdf
+2026-01-12 08:30:06,546 - INFO - Email enviado exitosamente a kevintoledo.n2@gmail.com
+2026-01-12 08:30:06,549 - INFO - ============================================================
+2026-01-12 08:30:06,550 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-12 08:30:06,550 - INFO - Total empleados procesados: 1
+2026-01-12 08:30:06,551 - INFO - Emails enviados exitosamente: 1
+2026-01-12 08:30:06,551 - INFO - Emails fallidos: 0
+2026-01-12 08:30:06,551 - INFO - ============================================================
+2026-01-13 08:30:03,748 - INFO - Iniciando proceso. Fecha: 2026-01-13
+2026-01-13 08:30:04,369 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-13 08:30:04,369 - INFO - No se encontraron empleados nuevos para hoy
+2026-01-13 08:30:04,370 - INFO - ============================================================
+2026-01-13 08:30:04,370 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-13 08:30:04,371 - INFO - Total empleados procesados: 0
+2026-01-13 08:30:04,372 - INFO - Emails enviados exitosamente: 0
+2026-01-13 08:30:04,372 - INFO - Emails fallidos: 0
+2026-01-13 08:30:04,373 - INFO - ============================================================
+2026-01-14 08:30:10,549 - INFO - Iniciando proceso. Fecha: 2026-01-14
+2026-01-14 08:30:13,143 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-14 08:30:13,143 - INFO - No se encontraron empleados nuevos para hoy
+2026-01-14 08:30:13,143 - INFO - ============================================================
+2026-01-14 08:30:13,144 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-14 08:30:13,144 - INFO - Total empleados procesados: 0
+2026-01-14 08:30:13,144 - INFO - Emails enviados exitosamente: 0
+2026-01-14 08:30:13,144 - INFO - Emails fallidos: 0
+2026-01-14 08:30:13,144 - INFO - ============================================================
+2026-01-15 08:30:10,092 - INFO - Iniciando proceso. Fecha: 2026-01-15
+2026-01-15 08:30:15,666 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-15 08:30:15,667 - INFO - No se encontraron empleados nuevos para hoy
+2026-01-15 08:30:15,667 - INFO - ============================================================
+2026-01-15 08:30:15,667 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-15 08:30:15,667 - INFO - Total empleados procesados: 0
+2026-01-15 08:30:15,668 - INFO - Emails enviados exitosamente: 0
+2026-01-15 08:30:15,668 - INFO - Emails fallidos: 0
+2026-01-15 08:30:15,668 - INFO - ============================================================
+2026-01-16 08:30:04,418 - INFO - Iniciando proceso. Fecha: 2026-01-16
+2026-01-16 08:30:05,071 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-16 08:30:05,072 - INFO - No se encontraron empleados nuevos para hoy
+2026-01-16 08:30:05,072 - INFO - ============================================================
+2026-01-16 08:30:05,073 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-16 08:30:05,073 - INFO - Total empleados procesados: 0
+2026-01-16 08:30:05,073 - INFO - Emails enviados exitosamente: 0
+2026-01-16 08:30:05,074 - INFO - Emails fallidos: 0
+2026-01-16 08:30:05,074 - INFO - ============================================================
+2026-01-19 08:09:41,041 - INFO - Iniciando proceso. Fecha: 2026-01-19
+2026-01-19 08:09:47,046 - INFO - Consulta SQL ejecutada. Registros encontrados: 2
+2026-01-19 08:09:47,059 - INFO - Empleados nuevos:
+                         full_name                                       empresa
+0         Ricardo Jesús Ramos Leal  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+1  Rony Francisco González Rosales  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2026-01-19 08:09:47,060 - INFO - Procesando empleado 1/2: Ricardo Jesús Ramos Leal - CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2026-01-19 08:09:47,183 - INFO - Archivo adjuntado: Reglamento_Interno_Cramer_2024.pdf
+2026-01-19 08:09:52,537 - INFO - Email enviado exitosamente a ricardojesusramos@gmail.com
+2026-01-19 08:09:52,538 - INFO - Procesando empleado 2/2: Rony Francisco González Rosales - CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2026-01-19 08:09:52,555 - INFO - Archivo adjuntado: Reglamento_Interno_Cramer_2024.pdf
+2026-01-19 08:09:54,888 - INFO - Email enviado exitosamente a ronyfrancisco1983@gmail.com
+2026-01-19 08:09:54,890 - INFO - ============================================================
+2026-01-19 08:09:54,890 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-19 08:09:54,891 - INFO - Total empleados procesados: 2
+2026-01-19 08:09:54,891 - INFO - Emails enviados exitosamente: 2
+2026-01-19 08:09:54,892 - INFO - Emails fallidos: 0
+2026-01-19 08:09:54,892 - INFO - ============================================================
+2026-01-19 08:30:04,773 - INFO - Iniciando proceso. Fecha: 2026-01-19
+2026-01-19 08:30:05,108 - INFO - Consulta SQL ejecutada. Registros encontrados: 2
+2026-01-19 08:30:05,122 - INFO - Empleados nuevos:
+                         full_name                                       empresa
+0         Ricardo Jesús Ramos Leal  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+1  Rony Francisco González Rosales  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2026-01-19 08:30:05,123 - INFO - Procesando empleado 1/2: Ricardo Jesús Ramos Leal - CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2026-01-19 08:30:05,158 - INFO - Archivo adjuntado: Reglamento_Interno_Cramer_2024.pdf
+2026-01-19 08:30:07,307 - INFO - Email enviado exitosamente a ricardojesusramos@gmail.com
+2026-01-19 08:30:07,309 - INFO - Procesando empleado 2/2: Rony Francisco González Rosales - CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2026-01-19 08:30:07,327 - INFO - Archivo adjuntado: Reglamento_Interno_Cramer_2024.pdf
+2026-01-19 08:30:09,658 - INFO - Email enviado exitosamente a ronyfrancisco1983@gmail.com
+2026-01-19 08:30:09,659 - INFO - ============================================================
+2026-01-19 08:30:09,659 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-19 08:30:09,659 - INFO - Total empleados procesados: 2
+2026-01-19 08:30:09,660 - INFO - Emails enviados exitosamente: 2
+2026-01-19 08:30:09,660 - INFO - Emails fallidos: 0
+2026-01-19 08:30:09,660 - INFO - ============================================================
+2026-01-20 08:30:10,624 - INFO - Iniciando proceso. Fecha: 2026-01-20
+2026-01-20 08:30:11,517 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-20 08:30:11,517 - INFO - No se encontraron empleados nuevos para hoy
+2026-01-20 08:30:11,517 - INFO - ============================================================
+2026-01-20 08:30:11,518 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-20 08:30:11,518 - INFO - Total empleados procesados: 0
+2026-01-20 08:30:11,518 - INFO - Emails enviados exitosamente: 0
+2026-01-20 08:30:11,518 - INFO - Emails fallidos: 0
+2026-01-20 08:30:11,519 - INFO - ============================================================
+2026-01-21 08:30:10,024 - INFO - Iniciando proceso. Fecha: 2026-01-21
+2026-01-21 08:30:15,575 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-21 08:30:15,576 - INFO - No se encontraron empleados nuevos para hoy
+2026-01-21 08:30:15,577 - INFO - ============================================================
+2026-01-21 08:30:15,578 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-21 08:30:15,578 - INFO - Total empleados procesados: 0
+2026-01-21 08:30:15,579 - INFO - Emails enviados exitosamente: 0
+2026-01-21 08:30:15,579 - INFO - Emails fallidos: 0
+2026-01-21 08:30:15,580 - INFO - ============================================================
+2026-01-22 08:30:10,136 - INFO - Iniciando proceso. Fecha: 2026-01-22
+2026-01-22 08:30:15,547 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-22 08:30:15,547 - INFO - No se encontraron empleados nuevos para hoy
+2026-01-22 08:30:15,547 - INFO - ============================================================
+2026-01-22 08:30:15,548 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-22 08:30:15,548 - INFO - Total empleados procesados: 0
+2026-01-22 08:30:15,548 - INFO - Emails enviados exitosamente: 0
+2026-01-22 08:30:15,548 - INFO - Emails fallidos: 0
+2026-01-22 08:30:15,548 - INFO - ============================================================
+2026-01-23 08:30:09,311 - INFO - Iniciando proceso. Fecha: 2026-01-23
+2026-01-23 08:30:10,067 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-23 08:30:10,067 - INFO - No se encontraron empleados nuevos para hoy
+2026-01-23 08:30:10,068 - INFO - ============================================================
+2026-01-23 08:30:10,068 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-23 08:30:10,068 - INFO - Total empleados procesados: 0
+2026-01-23 08:30:10,069 - INFO - Emails enviados exitosamente: 0
+2026-01-23 08:30:10,069 - INFO - Emails fallidos: 0
+2026-01-23 08:30:10,069 - INFO - ============================================================
+2026-01-26 08:13:36,722 - INFO - Iniciando proceso. Fecha: 2026-01-26
+2026-01-26 08:13:37,708 - INFO - Consulta SQL ejecutada. Registros encontrados: 4
+2026-01-26 08:13:37,722 - INFO - Empleados nuevos:
+                               full_name                                       empresa
+0              Diego Arnaldo García Jara  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+1  Sebastián Mauricio Morgado Bustamante  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2             Juan David Martínez Agurto  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+3      Andrea Victoria González Chirinos  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2026-01-26 08:13:37,723 - INFO - Procesando empleado 1/4: Diego Arnaldo García Jara - CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2026-01-26 08:13:37,939 - INFO - Archivo adjuntado: Reglamento_Interno_Cramer_2024.pdf
+2026-01-26 08:13:43,178 - INFO - Email enviado exitosamente a diego.garcia.j91@gmail.com
+2026-01-26 08:13:43,180 - INFO - Procesando empleado 2/4: Sebastián Mauricio Morgado Bustamante - CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2026-01-26 08:13:43,198 - INFO - Archivo adjuntado: Reglamento_Interno_Cramer_2024.pdf
+2026-01-26 08:13:45,313 - INFO - Email enviado exitosamente a se.morgado@duocuc.cl
+2026-01-26 08:13:45,316 - INFO - Procesando empleado 3/4: Juan David Martínez Agurto - CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2026-01-26 08:13:45,335 - INFO - Archivo adjuntado: Reglamento_Interno_Cramer_2024.pdf
+2026-01-26 08:13:47,983 - INFO - Email enviado exitosamente a juandavidmartinezaburto@gmail.com
+2026-01-26 08:13:47,984 - INFO - Procesando empleado 4/4: Andrea Victoria González Chirinos - CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2026-01-26 08:13:48,003 - INFO - Archivo adjuntado: Reglamento_Interno_Cramer_2024.pdf
+2026-01-26 08:13:51,193 - INFO - Email enviado exitosamente a andregzl72@gmail.com
+2026-01-26 08:13:51,194 - INFO - ============================================================
+2026-01-26 08:13:51,194 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-26 08:13:51,194 - INFO - Total empleados procesados: 4
+2026-01-26 08:13:51,195 - INFO - Emails enviados exitosamente: 4
+2026-01-26 08:13:51,195 - INFO - Emails fallidos: 0
+2026-01-26 08:13:51,195 - INFO - ============================================================
+2026-01-26 08:30:03,940 - INFO - Iniciando proceso. Fecha: 2026-01-26
+2026-01-26 08:30:04,245 - INFO - Consulta SQL ejecutada. Registros encontrados: 4
+2026-01-26 08:30:04,289 - INFO - Empleados nuevos:
+                               full_name                                       empresa
+0              Diego Arnaldo García Jara  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+1  Sebastián Mauricio Morgado Bustamante  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2             Juan David Martínez Agurto  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+3      Andrea Victoria González Chirinos  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2026-01-26 08:30:04,290 - INFO - Procesando empleado 1/4: Diego Arnaldo García Jara - CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2026-01-26 08:30:04,344 - INFO - Archivo adjuntado: Reglamento_Interno_Cramer_2024.pdf
+2026-01-26 08:30:06,837 - INFO - Email enviado exitosamente a diego.garcia.j91@gmail.com
+2026-01-26 08:30:06,839 - INFO - Procesando empleado 2/4: Sebastián Mauricio Morgado Bustamante - CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2026-01-26 08:30:06,861 - INFO - Archivo adjuntado: Reglamento_Interno_Cramer_2024.pdf
+2026-01-26 08:30:09,432 - INFO - Email enviado exitosamente a se.morgado@duocuc.cl
+2026-01-26 08:30:09,433 - INFO - Procesando empleado 3/4: Juan David Martínez Agurto - CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2026-01-26 08:30:09,456 - INFO - Archivo adjuntado: Reglamento_Interno_Cramer_2024.pdf
+2026-01-26 08:30:11,852 - INFO - Email enviado exitosamente a juandavidmartinezaburto@gmail.com
+2026-01-26 08:30:11,854 - INFO - Procesando empleado 4/4: Andrea Victoria González Chirinos - CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2026-01-26 08:30:11,877 - INFO - Archivo adjuntado: Reglamento_Interno_Cramer_2024.pdf
+2026-01-26 08:30:14,272 - INFO - Email enviado exitosamente a andregzl72@gmail.com
+2026-01-26 08:30:14,273 - INFO - ============================================================
+2026-01-26 08:30:14,273 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-26 08:30:14,273 - INFO - Total empleados procesados: 4
+2026-01-26 08:30:14,273 - INFO - Emails enviados exitosamente: 4
+2026-01-26 08:30:14,274 - INFO - Emails fallidos: 0
+2026-01-26 08:30:14,274 - INFO - ============================================================
+2026-01-27 08:30:10,297 - INFO - Iniciando proceso. Fecha: 2026-01-27
+2026-01-27 08:30:11,105 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-27 08:30:11,106 - INFO - No se encontraron empleados nuevos para hoy
+2026-01-27 08:30:11,106 - INFO - ============================================================
+2026-01-27 08:30:11,106 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-27 08:30:11,107 - INFO - Total empleados procesados: 0
+2026-01-27 08:30:11,107 - INFO - Emails enviados exitosamente: 0
+2026-01-27 08:30:11,107 - INFO - Emails fallidos: 0
+2026-01-27 08:30:11,107 - INFO - ============================================================
+2026-01-28 08:30:08,239 - INFO - Iniciando proceso. Fecha: 2026-01-28
+2026-01-28 08:30:08,800 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-28 08:30:08,801 - INFO - No se encontraron empleados nuevos para hoy
+2026-01-28 08:30:08,801 - INFO - ============================================================
+2026-01-28 08:30:08,801 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-28 08:30:08,801 - INFO - Total empleados procesados: 0
+2026-01-28 08:30:08,802 - INFO - Emails enviados exitosamente: 0
+2026-01-28 08:30:08,802 - INFO - Emails fallidos: 0
+2026-01-28 08:30:08,802 - INFO - ============================================================
+2026-01-29 08:30:11,891 - INFO - Iniciando proceso. Fecha: 2026-01-29
+2026-01-29 08:30:17,385 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-29 08:30:17,386 - INFO - No se encontraron empleados nuevos para hoy
+2026-01-29 08:30:17,386 - INFO - ============================================================
+2026-01-29 08:30:17,386 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-29 08:30:17,387 - INFO - Total empleados procesados: 0
+2026-01-29 08:30:17,387 - INFO - Emails enviados exitosamente: 0
+2026-01-29 08:30:17,387 - INFO - Emails fallidos: 0
+2026-01-29 08:30:17,388 - INFO - ============================================================
+2026-01-30 08:30:10,131 - INFO - Iniciando proceso. Fecha: 2026-01-30
+2026-01-30 08:30:10,909 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-01-30 08:30:10,909 - INFO - No se encontraron empleados nuevos para hoy
+2026-01-30 08:30:10,910 - INFO - ============================================================
+2026-01-30 08:30:10,910 - INFO - RESUMEN DE EJECUCIÓN
+2026-01-30 08:30:10,910 - INFO - Total empleados procesados: 0
+2026-01-30 08:30:10,911 - INFO - Emails enviados exitosamente: 0
+2026-01-30 08:30:10,911 - INFO - Emails fallidos: 0
+2026-01-30 08:30:10,911 - INFO - ============================================================
+2026-02-02 08:12:54,488 - INFO - Iniciando proceso. Fecha: 2026-02-02
+2026-02-02 08:12:55,680 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-02-02 08:12:55,680 - INFO - No se encontraron empleados nuevos para hoy
+2026-02-02 08:12:55,681 - INFO - ============================================================
+2026-02-02 08:12:55,681 - INFO - RESUMEN DE EJECUCIÓN
+2026-02-02 08:12:55,681 - INFO - Total empleados procesados: 0
+2026-02-02 08:12:55,681 - INFO - Emails enviados exitosamente: 0
+2026-02-02 08:12:55,681 - INFO - Emails fallidos: 0
+2026-02-02 08:12:55,682 - INFO - ============================================================
+2026-02-02 08:30:05,088 - INFO - Iniciando proceso. Fecha: 2026-02-02
+2026-02-02 08:30:05,553 - INFO - Consulta SQL ejecutada. Registros encontrados: 1
+2026-02-02 08:30:05,570 - INFO - Empleados nuevos:
+                     full_name                                  empresa
+0  Tomás Ignacio Hinojosa Moya  Sabores Y Fragancias.Cl Comercial Ltda.
+2026-02-02 08:30:05,571 - INFO - Procesando empleado 1/1: Tomás Ignacio Hinojosa Moya - Sabores Y Fragancias.Cl Comercial Ltda.
+2026-02-02 08:30:05,684 - INFO - Archivo adjuntado: Reglamento_Interno_SYF_2024.pdf
+2026-02-02 08:30:10,174 - INFO - Email enviado exitosamente a tomashinojosa111@gmail.com
+2026-02-02 08:30:10,176 - INFO - ============================================================
+2026-02-02 08:30:10,176 - INFO - RESUMEN DE EJECUCIÓN
+2026-02-02 08:30:10,177 - INFO - Total empleados procesados: 1
+2026-02-02 08:30:10,178 - INFO - Emails enviados exitosamente: 1
+2026-02-02 08:30:10,178 - INFO - Emails fallidos: 0
+2026-02-02 08:30:10,179 - INFO - ============================================================
+2026-02-03 08:30:10,651 - INFO - Iniciando proceso. Fecha: 2026-02-03
+2026-02-03 08:30:16,160 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-02-03 08:30:16,161 - INFO - No se encontraron empleados nuevos para hoy
+2026-02-03 08:30:16,161 - INFO - ============================================================
+2026-02-03 08:30:16,161 - INFO - RESUMEN DE EJECUCIÓN
+2026-02-03 08:30:16,162 - INFO - Total empleados procesados: 0
+2026-02-03 08:30:16,162 - INFO - Emails enviados exitosamente: 0
+2026-02-03 08:30:16,162 - INFO - Emails fallidos: 0
+2026-02-03 08:30:16,162 - INFO - ============================================================
+2026-02-04 08:30:09,536 - INFO - Iniciando proceso. Fecha: 2026-02-04
+2026-02-04 08:30:15,143 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-02-04 08:30:15,144 - INFO - No se encontraron empleados nuevos para hoy
+2026-02-04 08:30:15,144 - INFO - ============================================================
+2026-02-04 08:30:15,144 - INFO - RESUMEN DE EJECUCIÓN
+2026-02-04 08:30:15,145 - INFO - Total empleados procesados: 0
+2026-02-04 08:30:15,145 - INFO - Emails enviados exitosamente: 0
+2026-02-04 08:30:15,145 - INFO - Emails fallidos: 0
+2026-02-04 08:30:15,145 - INFO - ============================================================
+2026-02-05 08:30:12,538 - INFO - Iniciando proceso. Fecha: 2026-02-05
+2026-02-05 08:30:15,218 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-02-05 08:30:15,218 - INFO - No se encontraron empleados nuevos para hoy
+2026-02-05 08:30:15,219 - INFO - ============================================================
+2026-02-05 08:30:15,219 - INFO - RESUMEN DE EJECUCIÓN
+2026-02-05 08:30:15,219 - INFO - Total empleados procesados: 0
+2026-02-05 08:30:15,219 - INFO - Emails enviados exitosamente: 0
+2026-02-05 08:30:15,219 - INFO - Emails fallidos: 0
+2026-02-05 08:30:15,219 - INFO - ============================================================
+2026-02-06 08:30:10,357 - INFO - Iniciando proceso. Fecha: 2026-02-06
+2026-02-06 08:30:11,132 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-02-06 08:30:11,133 - INFO - No se encontraron empleados nuevos para hoy
+2026-02-06 08:30:11,133 - INFO - ============================================================
+2026-02-06 08:30:11,133 - INFO - RESUMEN DE EJECUCIÓN
+2026-02-06 08:30:11,134 - INFO - Total empleados procesados: 0
+2026-02-06 08:30:11,134 - INFO - Emails enviados exitosamente: 0
+2026-02-06 08:30:11,134 - INFO - Emails fallidos: 0
+2026-02-06 08:30:11,134 - INFO - ============================================================
+2026-02-06 09:05:40,654 - INFO - Iniciando proceso. Fecha: 2026-02-06
+2026-02-06 09:05:41,448 - INFO - Consulta SQL ejecutada. Registros encontrados: 0
+2026-02-06 09:05:41,449 - INFO - No se encontraron empleados nuevos para hoy
+2026-02-06 09:05:41,449 - INFO - ============================================================
+2026-02-06 09:05:41,449 - INFO - RESUMEN DE EJECUCIÓN
+2026-02-06 09:05:41,450 - INFO - Total empleados procesados: 0
+2026-02-06 09:05:41,451 - INFO - Emails enviados exitosamente: 0
+2026-02-06 09:05:41,451 - INFO - Emails fallidos: 0
+2026-02-06 09:05:41,451 - INFO - ============================================================
+2026-02-06 09:10:35,455 - INFO - Iniciando proceso. Fecha: 2023-08-07
+2026-02-06 09:10:35,700 - INFO - Consulta SQL ejecutada. Registros encontrados: 1
+2026-02-06 09:10:35,716 - INFO - Empleados nuevos:
+                       full_name                                       empresa
+0  Gabriel Alejandro Pavez Silva  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2026-02-06 09:10:35,717 - INFO - Procesando empleado 1/1: Gabriel Alejandro Pavez Silva - CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2026-02-06 09:10:35,773 - INFO - Archivo adjuntado: Reglamento_Interno_Cramer_2024.pdf
+2026-02-06 09:10:41,144 - INFO - Email enviado exitosamente a gpavez@cramer.cl
+2026-02-06 09:10:41,145 - INFO - ============================================================
+2026-02-06 09:10:41,145 - INFO - RESUMEN DE EJECUCIÓN
+2026-02-06 09:10:41,145 - INFO - Total empleados procesados: 1
+2026-02-06 09:10:41,146 - INFO - Emails enviados exitosamente: 1
+2026-02-06 09:10:41,146 - INFO - Emails fallidos: 0
+2026-02-06 09:10:41,146 - INFO - ============================================================

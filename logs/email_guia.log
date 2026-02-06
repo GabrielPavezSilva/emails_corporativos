@@ -1,0 +1,76 @@
+2025-12-01 15:04:26,257 - INFO - Iniciando proceso. Fecha: 2023-08-07 00:00:00
+2025-12-01 15:04:26,575 - INFO - Consulta SQL ejecutada. Registros encontrados: 1
+2025-12-01 15:04:26,584 - INFO - Empleados nuevos:
+                       full_name                                       empresa
+0  Gabriel Alejandro Pavez Silva  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2025-12-01 15:04:26,603 - INFO - Imagen embebida: image006.gif con CID: welcome_cramer_img
+2025-12-01 15:04:28,436 - INFO - Email enviado exitosamente a gpavez@cramer.cl
+2025-12-01 15:04:28,438 - INFO - ============================================================
+2025-12-01 15:04:28,438 - INFO - RESUMEN DE EJECUCIÓN
+2025-12-01 15:04:28,438 - INFO - Total empleados procesados: 1
+2025-12-01 15:04:28,439 - INFO - Emails enviados exitosamente: 1
+2025-12-01 15:04:28,439 - INFO - Emails fallidos: 0
+2025-12-01 15:04:28,440 - INFO - ============================================================
+2025-12-01 15:05:03,367 - INFO - Iniciando proceso. Fecha: 2025-12-01
+2025-12-01 15:05:03,568 - INFO - Consulta SQL ejecutada. Registros encontrados: 5
+2025-12-01 15:05:03,573 - INFO - Empleados nuevos:
+                           full_name                                       empresa
+0      Carlos Guillermo Moreno Gaete  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+1     Matías Joaquín Pacheco Beltrán  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2     Eymilie Scarleth Frite Ramírez  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+3  Alejandra Cecilia Aguilera Moraga  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+4    Gabriel Alejandro Sánchez Leiva  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2025-12-01 15:05:03,588 - INFO - Imagen embebida: image006.gif con CID: welcome_cramer_img
+2025-12-01 15:05:05,132 - INFO - Email enviado exitosamente a gpavez@cramer.cl
+2025-12-01 15:05:05,136 - INFO - Imagen embebida: image006.gif con CID: welcome_cramer_img
+2025-12-01 15:05:06,598 - INFO - Email enviado exitosamente a gpavez@cramer.cl
+2025-12-01 15:05:06,603 - INFO - Imagen embebida: image006.gif con CID: welcome_cramer_img
+2025-12-01 15:05:08,440 - INFO - Email enviado exitosamente a gpavez@cramer.cl
+2025-12-01 15:05:08,446 - INFO - Imagen embebida: image006.gif con CID: welcome_cramer_img
+2025-12-01 15:05:10,079 - INFO - Email enviado exitosamente a gpavez@cramer.cl
+2025-12-01 15:05:10,085 - INFO - Imagen embebida: image006.gif con CID: welcome_cramer_img
+2025-12-01 15:05:11,760 - INFO - Email enviado exitosamente a gpavez@cramer.cl
+2025-12-01 15:05:11,762 - INFO - ============================================================
+2025-12-01 15:05:11,762 - INFO - RESUMEN DE EJECUCIÓN
+2025-12-01 15:05:11,762 - INFO - Total empleados procesados: 5
+2025-12-01 15:05:11,762 - INFO - Emails enviados exitosamente: 5
+2025-12-01 15:05:11,762 - INFO - Emails fallidos: 0
+2025-12-01 15:05:11,763 - INFO - ============================================================
+2025-12-01 15:08:43,613 - INFO - Iniciando proceso. Fecha: 2025-12-01
+2025-12-01 15:08:43,856 - INFO - Consulta SQL ejecutada. Registros encontrados: 5
+2025-12-01 15:08:43,862 - INFO - Empleados nuevos:
+                           full_name                                       empresa
+0      Carlos Guillermo Moreno Gaete  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+1     Matías Joaquín Pacheco Beltrán  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2     Eymilie Scarleth Frite Ramírez  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+3  Alejandra Cecilia Aguilera Moraga  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+4    Gabriel Alejandro Sánchez Leiva  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2025-12-01 15:08:43,876 - INFO - Imagen embebida: image006.gif con CID: welcome_cramer_img
+2025-12-01 15:08:45,584 - INFO - Email enviado exitosamente a c.g.morenogaete@gmail.com
+2025-12-01 15:08:45,587 - INFO - Imagen embebida: image006.gif con CID: welcome_cramer_img
+2025-12-01 15:08:47,022 - INFO - Email enviado exitosamente a matiaspachecob@gmail.com
+2025-12-01 15:08:47,030 - INFO - Imagen embebida: image006.gif con CID: welcome_cramer_img
+2025-12-01 15:08:48,723 - INFO - Email enviado exitosamente a feymili03@gmail.com
+2025-12-01 15:08:48,727 - INFO - Imagen embebida: image006.gif con CID: welcome_cramer_img
+2025-12-01 15:08:50,323 - INFO - Email enviado exitosamente a alejandraaguilera564@gmail.com
+2025-12-01 15:08:50,332 - INFO - Imagen embebida: image006.gif con CID: welcome_cramer_img
+2025-12-01 15:08:52,148 - INFO - Email enviado exitosamente a gabriel.sanshez2001@gmail.com
+2025-12-01 15:08:52,149 - INFO - ============================================================
+2025-12-01 15:08:52,150 - INFO - RESUMEN DE EJECUCIÓN
+2025-12-01 15:08:52,150 - INFO - Total empleados procesados: 5
+2025-12-01 15:08:52,150 - INFO - Emails enviados exitosamente: 5
+2025-12-01 15:08:52,151 - INFO - Emails fallidos: 0
+2025-12-01 15:08:52,151 - INFO - ============================================================
+2026-02-06 09:21:58,910 - INFO - Iniciando proceso. Fecha: 2023-08-07 00:00:00
+2026-02-06 09:21:59,178 - INFO - Consulta SQL ejecutada. Registros encontrados: 1
+2026-02-06 09:21:59,186 - INFO - Empleados nuevos:
+                       full_name                                       empresa
+0  Gabriel Alejandro Pavez Silva  CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I.
+2026-02-06 09:21:59,201 - INFO - Imagen embebida: imagen_bienvenida.gif con CID: welcome_cramer_img
+2026-02-06 09:22:00,891 - INFO - Email enviado exitosamente a gpavez@cramer.cl
+2026-02-06 09:22:00,892 - INFO - ============================================================
+2026-02-06 09:22:00,893 - INFO - RESUMEN DE EJECUCIÓN
+2026-02-06 09:22:00,893 - INFO - Total empleados procesados: 1
+2026-02-06 09:22:00,894 - INFO - Emails enviados exitosamente: 1
+2026-02-06 09:22:00,894 - INFO - Emails fallidos: 0
+2026-02-06 09:22:00,895 - INFO - ============================================================
