@@ -1,8 +1,5 @@
 """"
 Envía un correo el dia de ingreso los colaboradores con el link a sharepoint.  
-
-NO DESPLEGAR DE MOMENTO!!!!!!!!
-
 """
 
 import os
@@ -60,7 +57,7 @@ TEST_MODE = os.getenv("TEST_MODE", "false").lower() == "true"
 TEST_EMAIL = os.getenv("TEST_EMAIL", "gpavez@cramer.cl")
 
 hoy = date.today()
-#hoy = datetime.strptime('2026-03-30', '%Y-%m-%d').date()
+#hoy = datetime.strptime('2026-03-31', '%Y-%m-%d').date()
 fecha_ingreso = hoy - timedelta(days=1)
 logger.info(f"Iniciando proceso. Fecha de ejecución: {hoy} — Buscando ingresos del: {fecha_ingreso}")
 

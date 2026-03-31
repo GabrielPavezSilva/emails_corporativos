@@ -43,7 +43,7 @@ TEST_MODE = os.getenv("TEST_MODE", "false").lower() == "true"
 TEST_EMAIL = os.getenv("TEST_EMAIL", "gpavez@cramer.cl")
 
 hoy = date.today()
-
+#hoy = datetime.strptime('2026-03-30', '%Y-%m-%d').date()
 logger.info(f"Iniciando proceso. Fecha: {hoy}")
 
 try:

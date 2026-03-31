@@ -62,9 +62,8 @@ RETRY_DELAY = int(os.getenv("RETRY_DELAY", "5"))  # segundos
 # MODO PRUEBA
 # Cambiar a False para enviar a los destinatarios reales
 # ===========================================
-MODO_PRUEBA   = True
+MODO_PRUEBA   = False
 CORREO_PRUEBA = "gpavez@cramer.cl"
-
 
 # ===========================================
 # FUNCIONES DE VALIDACIÓN
