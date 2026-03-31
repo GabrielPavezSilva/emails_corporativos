@@ -1,24 +1,53 @@
-# docker-compose.yml - Script Notificación Contrato Indefinido
+# docker-compose.yml - Scripts de notificación RRHH
+# Construcción compartida, un servicio por script
+# Scheduling via cron en el servidor (ver crontab al final del archivo)
+#
+# Cron sugerido (crontab -e):
+#   # Paso a indefinido — todos los días 8:00
+#   0 8 * * * docker compose -f /ruta/emails_corporativos/docker-compose.yml run --rm notificacion-indefinido
+#
+#   # Correo ingresos — lunes a viernes 7:30
+#   30 7 * * 1-5 docker compose -f /ruta/emails_corporativos/docker-compose.yml run --rm correo-ingresos
+#
+#   # Correo sharepoint — lunes a viernes 7:30
+#   30 7 * * 1-5 docker compose -f /ruta/emails_corporativos/docker-compose.yml run --rm correo-sharepoint
+
+x-base: &base
+  build:
+    context: .
+    dockerfile: Dockerfile
+  restart: "no"
+  user: "1008:1008"
+  env_file:
+    - .env
+  volumes:
+    - ./logs:/app/logs
+    - ./img:/app/img:ro
+    - ./pdf:/app/pdf:ro
+    - ./templates:/app/templates:ro
+  networks:
+    - desarrollo
+  logging:
+    driver: "json-file"
+    options:
+      max-size: "10m"
+      max-file: "3"
+
 services:
   notificacion-indefinido:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    <<: *base
     container_name: notificacion_contrato_indefinido
-    restart: "no"
-    user: "1008:1008"
-    env_file:
-      - .env
-    volumes:
-      - ./logs:/app/logs
-      - ./img:/app/img:ro
-    networks:
-      - desarrollo
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "10m"
-        max-file: "3"
+    command: python script/script_paso_indefinido.py
+
+  correo-ingresos:
+    <<: *base
+    container_name: correo_ingresos
+    command: python script/script_correo_ingresos.py
+
+  correo-sharepoint:
+    <<: *base
+    container_name: correo_sharepoint
+    command: python script/script_correo_sharepoint.py
 
 networks:
   desarrollo:

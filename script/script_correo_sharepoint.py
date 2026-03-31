@@ -10,6 +10,7 @@ import pandas as pd
 from dotenv import load_dotenv
 from datetime import date, datetime
 from sqlalchemy import create_engine
+from sshtunnel import SSHTunnelForwarder
 import smtplib
 import ssl
 from email.message import EmailMessage
@@ -55,35 +56,48 @@ SMTP_HOST = os.getenv("SMTP_HOST")
 SMTP_PORT = os.getenv("SMTP_PORT")
 SMTP_USER = os.getenv("SMTP_EMAIL")
 SMTP_PASS = os.getenv("SMTP_PASSWORD")
+TEST_MODE = os.getenv("TEST_MODE", "false").lower() == "true"
+TEST_EMAIL = os.getenv("TEST_EMAIL", "gpavez@cramer.cl")
 
-#hoy = date.today()
-hoy = datetime.strptime('2023-08-07', "%Y-%m-%d")
+hoy = date.today()
 logger.info(f"Iniciando proceso. Fecha: {hoy}")
 
 try:
-    engine = create_engine(
-        f"mssql+pyodbc://{os.getenv('SQL_SERVER')}/{os.getenv('SQL_DATABASE')}?trusted_connection=yes&driver=ODBC+Driver+18+for+SQL+Server&TrustServerCertificate=yes"
+    tunnel = SSHTunnelForwarder(
+        (os.getenv('SSH_HOST'), int(os.getenv('SSH_PORT', '22'))),
+        ssh_username=os.getenv('SSH_USER'),
+        ssh_password=os.getenv('SSH_PASSWORD'),
+        remote_bind_address=('localhost', int(os.getenv('PG_PORT', '5432')))
     )
-    
+    tunnel.start()
+    logger.info(f"Túnel SSH establecido — puerto local: {tunnel.local_bind_port}")
+
+    engine = create_engine(
+        f"postgresql+psycopg2://{os.getenv('PG_USER')}:{os.getenv('PG_PASSWORD')}@127.0.0.1:{tunnel.local_bind_port}/{os.getenv('PG_DATABASE')}"
+    )
+
     query_sql = f"""
-    SELECT 
-        e.[full_name],
-        e.[first_name],
-        e.[email],
+    SELECT
+        e.full_name,
+        e.first_name,
+        e.email,
         a.first_level_name AS empresa
-    FROM [IARRHH].[dbo].[employees] AS e
-    INNER JOIN [IARRHH].[dbo].[areas] AS a
-        ON e.[area_id] = a.[id] 
-            AND e.[cost_center] = a.[cost_center]
-    WHERE 
-        CONVERT(date, e.[active_since]) = '{hoy}'
-        AND e.[status] = 'activo'
-        AND e.[payment_method] = 'Transferencia Bancaria';
+    FROM rh.employees AS e
+    INNER JOIN rh.areas AS a
+        ON e.area_id = a.id
+            AND e.cost_center = a.cost_center
+    WHERE
+        e.active_since::date = '{hoy}'
+        AND e.status = 'activo'
+        AND e.payment_method = 'Transferencia Bancaria'
     """
-    
+
     df_alertas = pd.read_sql_query(query_sql, engine)
     logger.info(f"Consulta SQL ejecutada. Registros encontrados: {len(df_alertas)}")
-    
+
+    if TEST_MODE:
+        logger.info(f"*** MODO PRUEBA ACTIVO — todos los correos se enviarán a: {TEST_EMAIL} ***")
+
     if len(df_alertas) > 0:
         logger.info(f"Empleados nuevos:\n{df_alertas[['full_name', 'empresa']].to_string()}")
     else:
@@ -92,6 +106,10 @@ try:
 except Exception as e:
     logger.error(f"Error al ejecutar consulta SQL: {e}", exc_info=True)
     raise
+finally:
+    if 'tunnel' in locals() and tunnel.is_active:
+        tunnel.stop()
+        logger.info("Túnel SSH cerrado")
 
 
 def send_email_smtp_advanced(to_email, subject, html_body, image_path=None, image_cid=None):
@@ -156,8 +174,7 @@ emails_fallidos = 0
 # Iterar sobre el DataFrame
 for idx, fila in df_alertas.iterrows():
     nombre = fila["first_name"]
-    #correo = fila["email"]
-    correo = 'gpavez@cramer.cl'
+    correo = TEST_EMAIL if TEST_MODE else fila["email"]
     empresa = fila["empresa"]
     
     if "CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I." in empresa.upper():

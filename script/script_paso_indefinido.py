@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 from datetime import date, datetime
 from dateutil.relativedelta import relativedelta
 from sqlalchemy import create_engine
+from sshtunnel import SSHTunnelForwarder
 import logging
 from pathlib import Path
 from email.message import EmailMessage
@@ -38,37 +39,51 @@ SMTP_HOST = os.getenv("SMTP_HOST")
 SMTP_PORT = os.getenv("SMTP_PORT")
 SMTP_USER = os.getenv("SMTP_EMAIL")
 SMTP_PASS = os.getenv("SMTP_PASSWORD")
+TEST_MODE = os.getenv("TEST_MODE", "false").lower() == "true"
+TEST_EMAIL = os.getenv("TEST_EMAIL", "gpavez@cramer.cl")
 
-#hoy = date.today()
-hoy = datetime.strptime('2026-02-03', '%Y-%m-%d').date()
+hoy = date.today()
+#hoy = datetime.strptime('2026-02-03', '%Y-%m-%d').date()
 ingreso = hoy - relativedelta(months=3)
 
 try:
+    tunnel = SSHTunnelForwarder(
+        (os.getenv('SSH_HOST'), int(os.getenv('SSH_PORT', '22'))),
+        ssh_username=os.getenv('SSH_USER'),
+        ssh_password=os.getenv('SSH_PASSWORD'),
+        remote_bind_address=('localhost', int(os.getenv('PG_PORT', '5432')))
+    )
+    tunnel.start()
+    logger.info(f"Túnel SSH establecido — puerto local: {tunnel.local_bind_port}")
+
     engine = create_engine(
-    f"mssql+pyodbc://{os.getenv('SQL_USER')}:{os.getenv('SQL_PASSWORD')}@{os.getenv('SQL_SERVER')}/{os.getenv('SQL_DATABASE')}?driver=ODBC+Driver+18+for+SQL+Server&TrustServerCertificate=yes"
+        f"postgresql+psycopg2://{os.getenv('PG_USER')}:{os.getenv('PG_PASSWORD')}@127.0.0.1:{tunnel.local_bind_port}/{os.getenv('PG_DATABASE')}"
     )
 
     query_sql = f"""
-    SELECT 
-        [full_name]
-        ,[first_name]
-        ,[personal_email]
-        ,[status]
-        ,[active_since]
-        ,[start_date]
-    FROM [IARRHH].[dbo].[employees]
-    WHERE 
-        CONVERT(date, [start_date]) = '{hoy}'
-        AND CONVERT (date, [active_since]) = '{ingreso}'
-        AND [status] = 'activo'
-        AND [payment_method] = 'Transferencia Bancaria'
-        AND [contract_finishing_date_1] IS Null
-        AND [contract_finishing_date_2] IS Null
+    SELECT
+        full_name,
+        first_name,
+        personal_email,
+        status,
+        active_since,
+        start_date
+    FROM rh.employees
+    WHERE
+        start_date::date = '{hoy}'
+        AND active_since::date = '{ingreso}'
+        AND status = 'activo'
+        AND payment_method = 'Transferencia Bancaria'
+        AND contract_finishing_date_1 IS NULL
+        AND contract_finishing_date_2 IS NULL
     """
 
     df_alertas = pd.read_sql_query(query_sql, engine)
     logger.info(f"Consulta SQL ejecutada. Registros encontrados: {len(df_alertas)}")
     logger.info(f"Datos:\n{df_alertas.to_string()}") 
+
+    if TEST_MODE:
+        logger.info(f"*** MODO PRUEBA ACTIVO — todos los correos se enviarán a: {TEST_EMAIL} ***")
 
     if len(df_alertas) > 0:
         logger.info(f"Empleados a notificar:\n{df_alertas['full_name'].to_string()}")
@@ -77,6 +92,10 @@ try:
 except Exception as e:
     logger.error(f"Error al ejecutar consulta SQL: {e}", exc_info=True)
     raise
+finally:
+    if 'tunnel' in locals() and tunnel.is_active:
+        tunnel.stop()
+        logger.info("Túnel SSH cerrado")
 
 def send_embedded_email_smtp(to_email, subject, html_body, image_path, image_cid):
     """
@@ -150,8 +169,7 @@ emails_enviados = 0
 emails_fallidos = 0
 for _, fila in df_alertas.iterrows():
     nombre = fila["first_name"]
-    #correo = fila["personal_email"]
-    correo = "gpavez@cramer.cl" #pruebas
+    correo = TEST_EMAIL if TEST_MODE else fila["personal_email"]
     asunto = f"¡Felicitaciones por tu contrato indefinido, {nombre}!"
     
     cuerpo_html = f"""
