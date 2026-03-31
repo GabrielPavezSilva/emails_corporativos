@@ -8,7 +8,7 @@ NO DESPLEGAR DE MOMENTO!!!!!!!!
 import os
 import pandas as pd
 from dotenv import load_dotenv
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from sqlalchemy import create_engine
 from sshtunnel import SSHTunnelForwarder
 import smtplib
@@ -60,7 +60,9 @@ TEST_MODE = os.getenv("TEST_MODE", "false").lower() == "true"
 TEST_EMAIL = os.getenv("TEST_EMAIL", "gpavez@cramer.cl")
 
 hoy = date.today()
-logger.info(f"Iniciando proceso. Fecha: {hoy}")
+#hoy = datetime.strptime('2026-03-30', '%Y-%m-%d').date()
+fecha_ingreso = hoy - timedelta(days=1)
+logger.info(f"Iniciando proceso. Fecha de ejecución: {hoy} — Buscando ingresos del: {fecha_ingreso}")
 
 try:
     tunnel = SSHTunnelForwarder(
@@ -87,7 +89,7 @@ try:
         ON e.area_id = a.id
             AND e.cost_center = a.cost_center
     WHERE
-        e.active_since::date = '{hoy}'
+        e.active_since::date = '{fecha_ingreso}'
         AND e.status = 'activo'
         AND e.payment_method = 'Transferencia Bancaria'
     """
@@ -170,13 +172,22 @@ def send_email_smtp_advanced(to_email, subject, html_body, image_path=None, imag
     
 emails_enviados = 0
 emails_fallidos = 0
+emails_omitidos = 0
 
 # Iterar sobre el DataFrame
 for idx, fila in df_alertas.iterrows():
     nombre = fila["first_name"]
-    correo = TEST_EMAIL if TEST_MODE else fila["email"]
+    correo_real = fila["email"]
     empresa = fila["empresa"]
-    
+
+    # Validar que el correo tenga dominio @cramer.cl
+    if not correo_real.lower().endswith("@cramer.cl"):
+        logger.warning(f"Correo omitido (dominio no permitido): {correo_real} — empleado: {fila['full_name']}")
+        emails_omitidos += 1
+        continue
+
+    correo = TEST_EMAIL if TEST_MODE else correo_real
+
     if "CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I." in empresa.upper():
         empresa_key = 'cramer'
     elif 'Sabores Y Fragancias.Cl Comercial Ltda.'in empresa.upper():
@@ -209,4 +220,5 @@ logger.info("RESUMEN DE EJECUCIÓN")
 logger.info(f"Total empleados procesados: {len(df_alertas)}")
 logger.info(f"Emails enviados exitosamente: {emails_enviados}")
 logger.info(f"Emails fallidos: {emails_fallidos}")
+logger.info(f"Emails omitidos (dominio no permitido): {emails_omitidos}")
 logger.info("="*60)
