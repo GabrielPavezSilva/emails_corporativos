@@ -233,7 +233,7 @@ def main():
     #hoy = datetime.strptime('2026-02-03', '%Y-%m-%d').date()
     ingreso = hoy - relativedelta(months=3)
 
-    logger.info(f"📆 Buscando empleados con start_date={hoy} y active_since={ingreso}")
+    logger.info(f"📆 Buscando empleados con active_since={ingreso}")
 
     # 3. Conectar por SSH tunnel y ejecutar query
     try:
@@ -256,16 +256,12 @@ def main():
             first_name,
             personal_email,
             status,
-            active_since,
-            start_date
+            active_since
         FROM rh.employees
         WHERE
-            start_date::date = '{hoy}'
-            AND active_since::date = '{ingreso}'
+            active_since::date = '{ingreso}'
             AND status = 'activo'
             AND payment_method = 'Transferencia Bancaria'
-            AND contract_finishing_date_1 IS NULL
-            AND contract_finishing_date_2 IS NULL
         """
 
         df_alertas = pd.read_sql_query(query_sql, engine)
