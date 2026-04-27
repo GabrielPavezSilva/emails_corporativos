@@ -261,7 +261,6 @@ def main():
         WHERE
             active_since::date = '{ingreso}'
             AND status = 'activo'
-            AND payment_method = 'Transferencia Bancaria'
         """
 
         df_alertas = pd.read_sql_query(query_sql, engine)

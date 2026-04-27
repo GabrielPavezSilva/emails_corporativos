@@ -73,7 +73,6 @@ try:
     WHERE
         e.active_since::date = '{hoy}'
         AND e.status = 'activo'
-        AND e.payment_method = 'Transferencia Bancaria'
     """
 
     df_alertas = pd.read_sql_query(query_sql, engine)
