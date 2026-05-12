@@ -57,8 +57,8 @@ TEST_MODE = os.getenv("TEST_MODE", "false").lower() == "true"
 TEST_EMAIL = os.getenv("TEST_EMAIL", "gpavez@cramer.cl")
 
 hoy = date.today()
-#hoy = datetime.strptime('2026-03-31', '%Y-%m-%d').date()
-fecha_ingreso = hoy - timedelta(days=1)
+#hoy = datetime.strptime('2026-05-13', '%Y-%m-%d').date()
+fecha_ingreso = hoy - timedelta(days=2)
 logger.info(f"Iniciando proceso. Fecha de ejecución: {hoy} — Buscando ingresos del: {fecha_ingreso}")
 
 try:
@@ -177,20 +177,23 @@ for idx, fila in df_alertas.iterrows():
     empresa = fila["empresa"]
 
     # Validar que el correo tenga dominio @cramer.cl
-    if not correo_real.lower().endswith("@cramer.cl"):
+    dominios_validos = ("@cramer.cl", "@sabores.cl", "@fragancias.cl")
+
+    if not correo_real.lower().endswith(dominios_validos):
         logger.warning(f"Correo omitido (dominio no permitido): {correo_real} — empleado: {fila['full_name']}")
         emails_omitidos += 1
-        continue
+        continue    
 
     correo = TEST_EMAIL if TEST_MODE else correo_real
 
     if "CARLOS CRAMER PRODUCTOS AROMÁTICOS S.A. C.I." in empresa.upper():
         empresa_key = 'cramer'
-    elif 'Sabores Y Fragancias.Cl Comercial Ltda.'in empresa.upper():
+    elif 'SABORES Y FRAGANCIAS.CL COMERCIAL LTDA.' in empresa.upper():
         empresa_key = 'syf'
     else:
         empresa_key = 'cramer'
 
+    logger.info(f"Procesando a {nombre} - Empresa detectada: {empresa} → Clave: {empresa_key}")
     # PASAMOS EL CID COMO VALOR DE IMAGEN (Ej: "cid:welcome_cramer_img")
     cuerpo_html = get_email_template(empresa_key, nombre, f"cid:{ID_IMAGEN_BIENVENIDA}")
     
